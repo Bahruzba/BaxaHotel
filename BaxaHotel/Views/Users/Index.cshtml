@@ -1,0 +1,68 @@
+﻿@model List<User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page p-4">
+    <div id="SearchUser" class="row p-4 justify-content-center">
+        <div class="col-5">
+            <input class="p-1 mr-3" />
+            <button id="BtnSearchUser" class="btn btn-success">Axtar</button>
+        </div>
+        <div class="col-5 text-center">
+            <a class="btn btn-primary" href="@Url.Action("create","users")">İstifadəçi əlavə et</a>
+        </div>
+    </div>
+    <div class="row users mt-4">
+        <div class="col-11 text-right">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Sıra</th>
+                        <th class="text-center">Ad, soyad</th>
+                        <th class="text-center">Istifadəçi adı</th>
+                        <th class="text-center">Yaranma tarixi</th>
+                        <th class="text-center">Səlahiyyət</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 1;}
+                    @foreach (var user in Model)
+                    {
+                        if (user.Type == UserType.admin)
+                        {
+                            <tr>
+                                <td class="text-center">@(a++)</td>
+                                <td class="text-center">@user.FullName</td>
+                                <td class="text-center">@user.UserName</td>
+                                <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
+                                <td class="text-center">@user.Type</td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                            </tr>
+
+                        }
+                    }
+                    @foreach (var user in Model)
+                    {
+                        if (user.Type != UserType.admin)
+                        {
+                            <tr>
+                                <td class="text-center">@(a++)</td>
+                                <td class="text-center">@user.FullName</td>
+                                <td class="text-center">@user.UserName</td>
+                                <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
+                                <td class="text-center">@user.Type</td>
+                                <td class="text-center"><a class='btn btn-primary btn-sm' href='users/update/@user.Id'>Düzəliş et</a></td>
+                                <td class="text-center"><a class='btn btn-danger btn-sm' href='users/delete/@user.Id'>Sil</a></td>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

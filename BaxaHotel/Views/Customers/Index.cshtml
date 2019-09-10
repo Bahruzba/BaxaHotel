@@ -1,0 +1,48 @@
+﻿@model List<Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page p-4">
+    <div id="SearchCustomer" class="row p-4 justify-content-center">
+        <div class="col-5">
+            <input class="p-1 mr-3" />
+            <button id="BtnSearchCustomer" class="btn btn-success">Axtar</button>
+        </div>
+        <div class="col-5 text-center">
+            <a class="btn btn-primary" href="@Url.Action("create","customers")">Müştəri əlavə et</a>
+        </div>
+    </div>
+    <div class="row customers mt-4">
+        <div class="col-11 text-right">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Sıra</th>
+                        <th class="text-center">Müştəri</th>
+                        <th class="text-center">Əlaqə nömrəsi</th>
+                        <th class="text-center">Yaranma tarixi</th>
+                        <th class="text-center">Rezervasiyalar</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 1;}
+                    @foreach (var customer in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@(a++)</td>
+                            <td class="text-center">@customer.FullName</td>
+                            <td class="text-center">@customer.PhoneNumber</td>
+                            <td class="text-center">@customer.Created.ToString("dd MMM yyyy") il</td>
+                            <td class="text-center">@(@customer.Reservations.Count == 0 ? "Yoxdur" : @customer.Reservations.Count.ToString() + "  rezervasiya")</td>
+                            <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action("update","customers",new { id=customer.Id})">Düzəliş et</a></td>
+                            <td class="text-center"><a class="btn btn-danger btn-sm" href="@Url.Action("delete","customers",new { id=customer.Id})">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

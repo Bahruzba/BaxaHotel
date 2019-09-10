@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.wrraptheme.com/templates/bigbucket/html/app-calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2019 16:44:43 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    @*<link rel="icon" href="favicon.ico" type="image/x-icon">*@
+    <title>:: BigBucket :: Calendar</title>
+
+    <link rel="stylesheet" href="~/Public/vendor/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="~/Public/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Public/vendor/fullcalendar/fullcalendar.min.css">
+
+    <link rel="stylesheet" href="~/Public/css/main.css" type="text/css">
+</head>
+<body class="theme-indigo">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="~/Public/images/brand/icon_black.svg" width="48" height="48" alt="ArrOw"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <nav class="navbar custom-navbar navbar-expand-lg py-2">
+        <div class="container-fluid px-0">
+            <a href="javascript:void(0);" class="menu_toggle"><i class="fa fa-align-left"></i></a>
+            <a href="index.html" class="navbar-brand">
+                <img src="~/Public/images/brand/icon.svg" alt="BigBucket" />
+                <strong>Big</strong> Bucket
+            </a>
+            <div id="navbar_main">
+                <ul class="navbar-nav mr-auto hidden-xs">
+                    <li class="nav-item page-header">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                            <li class="breadcrumb-item active">Calendar</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item hidden-xs">
+                        <form class="form-inline main_search">
+                            <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search..."
+                                   aria-label="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link-icon" href="#"><i class="fa fa-cogs"></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-icon" href="#" id="navbar_1_dropdown_2" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-xl py-0">
+                            <div class="py-3 px-3">
+                                <h5 class="heading h6 mb-0">
+                                    Notifications <span class="badge badge-pill badge-primary text-uppercase float-right">3</span>
+                                </h5>
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action d-flex">
+                                    <div class="list-group-img"><span class="avatar bg-purple">JD</span></div>
+                                    <div class="list-group-content">
+                                        <div class="list-group-heading">Johnyy Depp <small>10:05 PM</small></div>
+                                        <p class="text-sm">Lorem ipsum dolor consectetur adipiscing eiusmod tempor</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex">
+                                    <div class="list-group-img"><span class="avatar bg-pink">TC</span></div>
+                                    <div class="list-group-content">
+                                        <div class="list-group-heading">Tom Cruise <small>10:05 PM</small></div>
+                                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur eiusmod tempor</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex">
+                                    <div class="list-group-img"><span class="avatar bg-blue">WS</span></div>
+                                    <div class="list-group-content">
+                                        <div class="list-group-heading">Will Smith <small>10:05 PM</small></div>
+                                        <p class="text-sm">Lorem sit amet consectetur adipiscing eiusmod tempor</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="py-3 text-center">
+                                <a href="#" class="link link-sm link--style-3">View all notifications</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-icon" href="#" id="navbar_1_dropdown_3" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <h6 class="dropdown-header">User menu</h6>
+                            <a class="dropdown-item" href="#"><i class="fa fa-user text-primary"></i>My Profile</a>
+                            <a class="dropdown-item" href="#">
+                                <span class="float-right badge badge-success">$50K</span><i class="fa fa-briefcase text-primary"></i>My Balance
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span class="float-right badge badge-warning">4</span><i class="fa fa-envelope text-primary"></i>Inbox
+                            </a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-cog text-primary"></i>Settings</a>
+                            <div class="dropdown-divider" role="presentation"></div>
+                            <a class="dropdown-item" href="@Url.Action("logout","login")"><i class="fa fa-sign-out text-primary"></i>Hesabdan çıx</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main_content" id="main-content">
+
+        <div class="left_sidebar">
+            <nav class="sidebar">
+                <div class="user-info">
+                    <div class="image"><a href="#"><img src="~/Public/images/user.png" alt="User"></a></div>
+                    <div class="detail mt-3">
+                        <h5 class="mb-0">Mike Thomas</h5>
+                        <small>Admin</small>
+                    </div>
+                    <div class="social">
+                        <a href="javascript:void(0);" title="facebook"><i class="ti-twitter-alt"></i></a>
+                        <a href="javascript:void(0);" title="twitter"><i class="ti-linkedin"></i></a>
+                        <a href="javascript:void(0);" title="instagram"><i class="ti-facebook"></i></a>
+                    </div>
+                </div>
+                <ul id="main-menu" class="metismenu">
+                    <li class="g_heading">Main</li>
+                    <li><a href="@Url.Action("index","customers")"><i class="ti-home"></i><span>Müştərilər</span></a></li>
+                    <li><a href="@Url.Action("index","users")"><i class="ti-user"></i><span>İstifadəçilər</span></a></li>
+                    <li class="g_heading">Application</li>
+                    <li class="active"><a href="app-calendar.html"><i class="ti-calendar"></i><span>Calendar</span></a></li>
+                    <li><a href="@Url.Action("index","login")"><i class="ti-notepad"></i><span>Login</span></a></li>
+                    <li><a href="@Url.Action("index","rooms")"><i class="ti-email"></i><span>Otaqlar</span></a></li>
+                    <li><a href="app-chat.html"><i class="ti-comments"></i><span>Chat Apps</span></a></li>
+                    <li><a href="app-contact.html"><i class="ti-id-badge"></i><span>Contact List</span></a></li>
+                    <li><a href="widgets.html"><i class="ti-widget"></i><span>Widgets</span></a></li>
+
+                    <li class="g_heading">Chart, Froms & Elements</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-pie-chart"></i><span>Charts</span></a>
+                        <ul>
+                            <li><a href="chart-c3.html">C3 Chart</a></li>
+                            <li><a href="chartsjs.html">Charts JS</a></li>
+                            <li><a href="chart-flot.html">Flot Chart</a></li>
+                            <li><a href="chart-knob.html">JQuery Knob</a></li>
+                            <li><a href="chart-morris.html">Morris Chart</a></li>
+                            <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-pencil-alt"></i><span>Forms</span></a>
+                        <ul>
+                            <li><a href="form-elements.html">Basic Elements</a></li>
+                            <li><a href="form-advanced.html">Advanced Elements</a></li>
+                            <li><a href="form-validation.html">Form Validation</a></li>
+                            <li><a href="form-wizard.html">Form Wizard</a></li>
+                            <li><a href="form-summernote.html">Summernote</a></li>
+                            <li><a href="form-markdown.html">Markdown</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tables</span></a>
+                        <ul>
+                            <li><a href="table-basic.html">Table Example</a></li>
+                            <li><a href="table-normal.html">Table Normal</a></li>
+                            <li><a href="table-datatable.html">Jquery Datatable</a></li>
+                            <li><a href="table-editable.html">Table Editable</a></li>
+                            <li><a href="table-foo.html">Table Foo</a></li>
+                        </ul>
+                    </li>
+                    <li class="g_heading">Users</li>
+                    <li><a href="page-profile.html"><i class="ti-user"></i><span>Profile</span></a></li>
+                    <li><a href="page-timeline.html"><i class="ti-menu-alt"></i><span>Timeline</span></a></li>
+                    <li><a href="page-invoices.html"><i class="ti-file"></i><span>Invoices</span></a></li>
+                    <li class="g_heading">Authentication</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-lock"></i><span>Authentication</span></a>
+                        <ul>
+                            <li><a class="dropdown-item" href="auth-login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="auth-register.html">Register</a></li>
+                            <li><a class="dropdown-item" href="auth-forgot-password.html">Forgot password</a></li>
+                            <li><a class="dropdown-item" href="auth-lock-screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-na"></i><span>Error Pages</span></a>
+                        <ul>
+                            <li><a class="dropdown-item" href="error-400.html">400 error</a></li>
+                            <li><a class="dropdown-item" href="error-401.html">401 error</a></li>
+                            <li><a class="dropdown-item" href="error-403.html">403 error</a></li>
+                            <li><a class="dropdown-item" href="error-404.html">404 error</a></li>
+                            <li><a class="dropdown-item" href="error-500.html">500 error</a></li>
+                            <li><a class="dropdown-item" href="error-503.html">503 error</a></li>
+                        </ul>
+                    </li>
+                    <li class="g_heading">Extra</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow"><i class="ti-clipboard"></i><span>Pages</span></a>
+                        <ul>
+                            <li><a href="page-empty.html">Empty page</a></li>
+                            <li><a href="page-pricing.html">Pricing cards</a>
+                            <li><a href="page-search.html">Search Results</a></li>
+                            <li><a href="page-testimonials.html">Testimonials</a></li>
+                            <li><a href="page-icons.html">Icons</a></li>
+                            <li><a href="page-gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="docs/introduction.html"><i class="ti-file"></i><span>Documentation</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        @RenderBody()
+
+    </div>
+
+    <!-- Core -->
+    <script src="~/Public/bundles/libscripts.bundle.js"></script>
+    <script src="~/Public/bundles/vendorscripts.bundle.js"></script>
+
+    <script src="~/Public/bundles/fullcalendarscripts.bundle.js"></script><!--/ calender javascripts -->
+    <!-- Theme JS -->
+    <script src="~/Public/js/theme.js"></script>
+    <script src="~/Public/js/pages/calendar.js"></script>
+</body>
+
+<!-- Mirrored from www.wrraptheme.com/templates/bigbucket/html/app-calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2019 16:44:47 GMT -->
+</html>
