@@ -18,28 +18,25 @@
                     @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.PersonCapacity)
-                    @Html.TextBoxFor(m => m.PersonCapacity, null, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.PersonCapacity, null, new { @class = "text-danger" })
+                    @Html.LabelFor(m => m.PairPersonBedroom)
+                    @Html.TextBoxFor(m => m.PairPersonBedroom, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.PairPersonBedroom, null, new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ChildCapacity)
-                    @Html.TextBoxFor(m => m.ChildCapacity, null, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.ChildCapacity, null, new { @class = "text-danger" })
+                    @Html.LabelFor(m => m.SinglePersonBedroom)
+                    @Html.TextBoxFor(m => m.SinglePersonBedroom, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SinglePersonBedroom, null, new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Type)
-                    <select class="form-control" name="Type">
-                        @(Model.Type.ToString()=="Tək"?Html.Raw("<option selected value='0'>Tək nəfərlik</option><option value='1'>Cüt nəfərlik</option>"):Html.Raw("<option value='0'>Tək nəfərlik</option><option selected value='1'>Cüt nəfərlik</option>"))
-                        
-                        
-                    </select>
-                    @Html.ValidationMessageFor(m => m.Type, null, new { @class = "text-danger" })
+                    @Html.LabelFor(m => m.ChildBedroom)
+                    @Html.TextBoxFor(m => m.ChildBedroom, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ChildBedroom, null, new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Status)
-                    <select class="form-control" name="Status">
-                        @(Model.Status==true?Html.Raw("<option selected value='true'>Aktiv</option><option value='false'>Passiv</option>"):Html.Raw("<option value='true'>Aktiv</option><option selected value='false'>Passiv</option>"))
+                    <select name="Status" class="form-control">
+                        <option value="true">Aktiv</option>
+                        <option value="false">Passiv</option>
                     </select>
                     @Html.ValidationMessageFor(m => m.Status, null, new { @class = "text-danger" })
                 </div>

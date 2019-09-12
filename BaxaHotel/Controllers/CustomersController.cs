@@ -17,14 +17,14 @@ namespace BaxaHotel.Controllers
         }
         public ActionResult Index()
         {
-            List<Customer> customers = context.Customers.Include("Reservations").ToList();
+            List<Customer> customers = context.Customers.Include("Reservations").Where(c=>c.IsDelete==false).OrderBy(c=>c.FullName).ToList();
             return View(customers);
         }
 
         public JsonResult GetList(string name)
         {
-           var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)).ToList();
-            return Json(customers, JsonRequestBehavior.AllowGet);
+            var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)&&c.IsDelete==false).OrderBy(c=>c.FullName).ToList();
+            return Json(customers.Select(c => new { c.Id, c.FullName, c.PhoneNumber, Date = c.Created.ToString("dd MMM yyyy"), c.IsDelete, c.Status, c.Reservations }), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -40,6 +40,9 @@ namespace BaxaHotel.Controllers
             {
                 return View(customer);
             }
+
+
+            customer.IsDelete = false;
             customer.Created = DateTime.Now;
             context.Customers.Add(customer);
             context.SaveChanges();
@@ -50,7 +53,7 @@ namespace BaxaHotel.Controllers
         public ActionResult Update(int id)
         {
             Customer customer = context.Customers.Find(id);
-            if (customer == null)
+            if (customer == null||customer.IsDelete==true)
             {
                 return HttpNotFound();
             }
@@ -65,22 +68,56 @@ namespace BaxaHotel.Controllers
             {
                 return View(customer);
             }
+
+            if (context.Customers.Any(r => r.PhoneNumber== customer.PhoneNumber))
+            {
+                ModelState.AddModelError("PhoneNumber", customer.PhoneNumber+ " telefon nömrəsi artıq qeydiyyatdan keçib.");
+                return View(customer);
+            }
+
             context.Entry(customer).State = System.Data.Entity.EntityState.Modified;
             context.Entry(customer).Property(x => x.Created).IsModified = false;
+            context.Entry(customer).Property(x => x.IsDelete).IsModified = false;
             context.SaveChanges();
             return RedirectToAction("index");
         }
+
         public ActionResult Delete(int id)
         {
-            Customer customer = context.Customers.Find(id);
+            Customer customer = context.Customers.Include("Reservations").FirstOrDefault(c=>c.Id==id);
             if (customer == null)
             {
-                return HttpNotFound();
+                return new HttpNotFoundResult();
             }
-            context.Customers.Remove(customer);
+            if (customer.Reservations.Count == 0)
+            {
+                context.Customers.Remove(customer);
+                context.SaveChanges();
+                return Json("", JsonRequestBehavior.AllowGet);
+            }
+            customer.IsDelete = true;
             context.SaveChanges();
 
-            return RedirectToAction("index");
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Activate(int id)
+        {
+            Customer customer = context.Customers.FirstOrDefault(c=>c.Id==id&&c.IsDelete==false);
+            if (customer == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            if (customer.Status == true)
+            {
+                customer.Status = false;
+            }
+            else
+            {
+                customer.Status = true;
+            }
+            context.SaveChanges();
+            return Json("", JsonRequestBehavior.AllowGet);
         }
     }
 }

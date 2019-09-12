@@ -19,15 +19,14 @@ namespace BaxaHotel.Controllers
         }
         public ActionResult Index()
         {
-            List<User> users = context.Users.ToList();
-
+            List<User> users = context.Users.Where(u=>u.IsDelete==false).ToList();
             return View(users);
         }
 
         public JsonResult Getlist(string name)
         {
-            var users = context.Users.Where(u=>u.FullName.Contains(name)).ToList();
-            return Json(users, JsonRequestBehavior.AllowGet);
+            var users = context.Users.Include("Reservations").Where(u=>u.FullName.Contains(name)&& u.IsDelete == false).ToList();
+            return Json(users.Select(u => new { u.Id, u.FullName, u.UserName, Date = u.Created.ToString("dd MMM yyyy"), u.Type, u.Status, u.IsDelete, u.Reservations }), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -47,6 +46,14 @@ namespace BaxaHotel.Controllers
             {
                 return View(user);
             }
+
+            if (context.Users.Any(r => r.UserName== user.UserName))
+            {
+                ModelState.AddModelError("UserName", user.UserName + " adlı istifadəçi artıq mövcuddur.");
+                return View(user);
+            }
+
+            user.IsDelete = false;
             user.Password = Crypto.HashPassword(user.Password);
             context.Users.Add(user);
             context.SaveChanges();
@@ -57,7 +64,7 @@ namespace BaxaHotel.Controllers
         public ActionResult Update(int id)
         {
             User user = context.Users.Find(id);
-            if (user == null)
+            if (user == null||user.IsDelete==true)
             {
                 return HttpNotFound();
             }
@@ -72,9 +79,11 @@ namespace BaxaHotel.Controllers
             {
                 return View(user);
             }
+
             user.Password = Crypto.HashPassword(user.Password);
             context.Entry(user).State = System.Data.Entity.EntityState.Modified;
             context.Entry(user).Property(x => x.Created).IsModified = false;
+            context.Entry(user).Property(x => x.IsDelete).IsModified = false;
 
             User user1= context.Users.FirstOrDefault(r => r.UserName == user.UserName);
 
@@ -84,23 +93,46 @@ namespace BaxaHotel.Controllers
                 return View(user);
             }
 
-
             context.SaveChanges();
-
             return RedirectToAction("index");
         }
 
         public ActionResult Delete(int id)
         {
-            User user = context.Users.Find(id);
+            User user = context.Users.Include("Reservations").FirstOrDefault(u=>u.Id==id);
             if (user == null)
             {
-                return HttpNotFound();
+                return new HttpNotFoundResult();
             }
-            context.Users.Remove(user);
+            if (user.Reservations.Count == 0)
+            {
+                context.Users.Remove(user);
+                context.SaveChanges();
+                return Json("", JsonRequestBehavior.AllowGet);
+            }
+            user.IsDelete = true;
+            context.SaveChanges();
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Activate(int id)
+        {
+            User user = context.Users.FirstOrDefault(u=>u.Id==id&&u.IsDelete==false);
+            if (user == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            if (user.Status == true)
+            {
+                user.Status = false;
+            }
+            else
+            {
+                user.Status = true;
+            }
             context.SaveChanges();
 
-            return RedirectToAction("index");
+            return Json("", JsonRequestBehavior.AllowGet);
         }
     }
 }

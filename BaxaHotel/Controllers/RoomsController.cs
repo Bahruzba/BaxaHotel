@@ -17,14 +17,14 @@ namespace BaxaHotel.Controllers
         }
         public ActionResult Index()
         {
-            List<Room> rooms = context.Rooms.Include("Reservations").OrderBy(r=>r.Number).ToList();
+            List<Room> rooms = context.Rooms.Include("Reservations").Where(r=>r.IsDelete==false).OrderBy(r=>r.Number).ToList();
             return View(rooms);
         }
 
         public JsonResult GetList(string name)
         {
-            var rooms = context.Rooms.Include("Reservations").Where(r => r.Number.ToString().Contains(name)).OrderBy(r=>r.Number).ToList();
-            return Json(rooms, JsonRequestBehavior.AllowGet);
+            var rooms = context.Rooms.Where(r => r.Number.ToString().Contains(name)&&r.IsDelete == false).OrderBy(r=>r.Number).ToList();
+            return Json(rooms.Select(r => new { r.Id, r.Number, r.Price, r.PairPersonBedroom, r.SinglePersonBedroom, r.ChildBedroom, r.Status,r.IsDelete, Date = r.Created.ToString("dd MMM yyyy") }), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -35,7 +35,6 @@ namespace BaxaHotel.Controllers
         [HttpPost]
         public ActionResult Create(Room room)
         {
-
             if (!ModelState.IsValid)
             {
                 return View(room);
@@ -46,7 +45,7 @@ namespace BaxaHotel.Controllers
                 ModelState.AddModelError("Number", room.Number+" nömrəli otaq mövcuddur.");
                 return View(room);
             }
-            room.Status = true;
+            room.IsDelete = false;
             room.Created = DateTime.Now;
             context.Rooms.Add(room);
             context.SaveChanges();
@@ -57,7 +56,7 @@ namespace BaxaHotel.Controllers
         public ActionResult Update(int id)
         {
             Room room = context.Rooms.Find(id);
-            if (room == null)
+            if (room == null||room.IsDelete==true)
             {
                 return HttpNotFound();
             }
@@ -72,9 +71,9 @@ namespace BaxaHotel.Controllers
                 return View(room);
             }
 
-
             context.Entry(room).State = System.Data.Entity.EntityState.Modified;
             context.Entry(room).Property(x => x.Created).IsModified = false;
+            context.Entry(room).Property(x => x.IsDelete).IsModified = false;
 
             Room room1 = context.Rooms.FirstOrDefault(r => r.Number == room.Number);
 
@@ -91,47 +90,37 @@ namespace BaxaHotel.Controllers
         public ActionResult Delete(int id)
         {
             Room room = context.Rooms.Include("Reservations").FirstOrDefault(p=>p.Id==id);
-
             if (room == null)
             {
-                return HttpNotFound();
+                return new HttpNotFoundResult();
             }
             if (room.Reservations.Count == 0)
             {
                 context.Rooms.Remove(room);
                 context.SaveChanges();
+                return Json("", JsonRequestBehavior.AllowGet);
             }
-            else
-            {
-                return HttpNotFound();
-            }
-
-            return RedirectToAction("index");
+            room.IsDelete = true;
+            context.SaveChanges();
+            return Json("", JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Activate(int id)
         {
-            Room room = context.Rooms.Find(id);
+            Room room = context.Rooms.FirstOrDefault(r=>r.Id==id&&r.IsDelete==false);;
             if (room == null)
             {
-                return HttpNotFound();
+                return new HttpNotFoundResult();
             }
-            room.Status = true;
-            context.SaveChanges();
-
-            return RedirectToAction("index");
-        }
-        public ActionResult Passive(int id)
-        {
-            Room room = context.Rooms.Find(id);
-            if (room == null)
+            if (room.Status == true)
             {
-                return HttpNotFound();
+                room.Status = false;
+            } else
+            {
+                room.Status = true;
             }
-            room.Status = false;
             context.SaveChanges();
-
-            return RedirectToAction("index");
+            return Json("", JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -196,6 +196,30 @@
     <Compile Include="Migrations\201909112220205_deleteUmunTypeBedrooms.Designer.cs">
       <DependentUpon>201909112220205_deleteUmunTypeBedrooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909120639528_AddNulableToBedroomCount.cs" />
+    <Compile Include="Migrations\201909120639528_AddNulableToBedroomCount.Designer.cs">
+      <DependentUpon>201909120639528_AddNulableToBedroomCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120644194_AddIsDeleteToRoom.cs" />
+    <Compile Include="Migrations\201909120644194_AddIsDeleteToRoom.Designer.cs">
+      <DependentUpon>201909120644194_AddIsDeleteToRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120655512_doNulableIsdelete.cs" />
+    <Compile Include="Migrations\201909120655512_doNulableIsdelete.Designer.cs">
+      <DependentUpon>201909120655512_doNulableIsdelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120658556_fixbuxx.cs" />
+    <Compile Include="Migrations\201909120658556_fixbuxx.Designer.cs">
+      <DependentUpon>201909120658556_fixbuxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120803348_AddIsDeleteToTables.cs" />
+    <Compile Include="Migrations\201909120803348_AddIsDeleteToTables.Designer.cs">
+      <DependentUpon>201909120803348_AddIsDeleteToTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120840456_AddReseptionListToUsers.cs" />
+    <Compile Include="Migrations\201909120840456_AddReseptionListToUsers.Designer.cs">
+      <DependentUpon>201909120840456_AddReseptionListToUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Reservation.cs" />
@@ -445,6 +469,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909112220205_deleteUmunTypeBedrooms.resx">
       <DependentUpon>201909112220205_deleteUmunTypeBedrooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120639528_AddNulableToBedroomCount.resx">
+      <DependentUpon>201909120639528_AddNulableToBedroomCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120644194_AddIsDeleteToRoom.resx">
+      <DependentUpon>201909120644194_AddIsDeleteToRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120655512_doNulableIsdelete.resx">
+      <DependentUpon>201909120655512_doNulableIsdelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120658556_fixbuxx.resx">
+      <DependentUpon>201909120658556_fixbuxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120803348_AddIsDeleteToTables.resx">
+      <DependentUpon>201909120803348_AddIsDeleteToTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120840456_AddReseptionListToUsers.resx">
+      <DependentUpon>201909120840456_AddReseptionListToUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

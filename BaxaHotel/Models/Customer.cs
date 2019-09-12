@@ -26,6 +26,7 @@ namespace BaxaHotel.Models
         public string SVnum { get; set; }
         public DateTime Created { get; set; }
         public bool Status { get; set; }
+        public bool? IsDelete { get; set; }
         public List<Reservation> Reservations { get; set; }
     }
 }
