@@ -28,7 +28,6 @@ namespace BaxaHotel.Controllers
         {
             var users = context.Users.Where(u=>u.FullName.Contains(name)).ToList();
             return Json(users, JsonRequestBehavior.AllowGet);
-
         }
 
         [HttpGet]
@@ -73,8 +72,19 @@ namespace BaxaHotel.Controllers
             {
                 return View(user);
             }
+            user.Password = Crypto.HashPassword(user.Password);
             context.Entry(user).State = System.Data.Entity.EntityState.Modified;
             context.Entry(user).Property(x => x.Created).IsModified = false;
+
+            User user1= context.Users.FirstOrDefault(r => r.UserName == user.UserName);
+
+            if (user1 != null && user1.Id != user.Id)
+            {
+                ModelState.AddModelError("UserName", user.UserName+ " istifadəçi adı artıq mövcuddur.");
+                return View(user);
+            }
+
+
             context.SaveChanges();
 
             return RedirectToAction("index");

@@ -26,6 +26,7 @@ namespace BaxaHotel.Models
         public string Token { get; set; }
         public DateTime Created { get; set; }
         [Required(ErrorMessage = "Hesabın hansı kateqoriyaya aid olduğunu yazın.")]
+        public bool Status { get; set; }
         public UserType Type { get; set; }
     }
 }

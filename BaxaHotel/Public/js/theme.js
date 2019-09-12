@@ -313,16 +313,16 @@ $(document).ready(function() {
                     var a1 = $("<a></a>");
                     a1.text("Düzəliş et");
                     a1.addClass("btn btn-primary btn-sm");
-                    a1.attr("href", "/customers/update/" + response[i].id);
+                    a1.attr("href", "/customers/update/" + response[i].Id);
                     $(".customers tbody tr:last-child td:last-child").append(a1);
 
                     var td7 = $("<td></td>");
                     $(".customers tbody tr").append(td7);
-                    var a1 = $("<a></a>");
-                    a1.text("Sil");
-                    a1.addClass("btn btn-danger btn-sm");
-                    a1.attr("href", "/customers/delete/" + response[i].id);
-                    $(".customers tbody tr:last-child td:last-child").append(a1);
+                    var a2 = $("<a></a>");
+                    a2.text("Sil");
+                    a2.addClass("btn btn-danger btn-sm");
+                    a2.attr("href", "/customers/delete/" + response[i].Id);
+                    $(".customers tbody tr:last-child td:last-child").append(a2);
 
                     $(".customers tbody td").addClass("text-center");
                 }
@@ -367,26 +367,32 @@ $(document).ready(function() {
                     }
                     $(".users tbody tr:last-child").append(td5);
 
-                    var td6 = $("<td></td>");
-                    $(".users tbody tr:last-child").append(td6);
-                    if (response[i].Type != 0)
-                    {
+
+                    if (response[i].Type != 0) {
+                        var td6 = $("<td></td>");
+                        $(".users tbody tr:last-child").append(td6);
                         var a1 = $("<a></a>");
                         a1.text("Düzəliş et");
                         a1.addClass("btn btn-primary btn-sm");
-                        a1.attr("href", "/users/update/" + response[i].id);
+                        a1.attr("href", "/users/update/" + response[i].Id);
                         $(".users tbody tr:last-child td:last-child").append(a1);
+
                         var td7 = $("<td></td>");
-                        $(".users tbody tr").append(td7);
-                        var a1 = $("<a></a>");
-                        a1.text("Sil");
-                        a1.addClass("btn btn-danger btn-sm");
-                        a1.attr("href", "/users/delete/" + response[i].id);
-                        $(".users tbody tr:last-child td:last-child").append(a1);
+                        $(".users tbody tr:last-child").append(td7);
+                        var a2 = $("<a></a>");
+                        a2.text("Sil");
+                        a2.addClass("btn btn-danger btn-sm");
+                        a2.attr("href", "/users/delete/" + response[i].Id);
+                        $(".users tbody tr:last-child td:last-child").append(a2);
+                    } else {
+                        var td6 = $("<td></td>");
+                        $(".users tbody tr:last-child").append(td6);
+                        var td7 = $("<td></td>");
+                        $(".users tbody tr:last-child").append(td7);
+
                     }
                         $(".users tbody td").addClass("text-center");
                 }
-                $(".users .table").append();
 
             }),
             error: (function (error) {
@@ -395,6 +401,63 @@ $(document).ready(function() {
         })
     })
 
+    $("#BtnSearchRoom").click(function () {
+        var name = $("#SearchRoom input").val();
+        $.ajax({
+            url: "/rooms/getlist?name=" + name,
+            type: "get",
+            dataType: "json",
+            success: (function (response) {
+                $(".rooms tbody tr").remove();
+                for (var i = 0; i < response.length; i++) {
+                    var tr = $("<tr></tr>");
+                    $(".rooms tbody").append(tr);
+                    var td1 = $("<td></td>");
+                    td1.text(i + 1);
+                    $(".rooms tbody tr:last-child").append(td1);
+                    var td2 = $("<td></td>");
+                    td2.text("№ "+response[i].Number);
+                    $(".rooms tbody tr:last-child").append(td2);
+                    var td3 = $("<td></td>");
+                    td3.text(response[i].Price);
+                    $(".rooms tbody tr:last-child").append(td3);
+                    var td4 = $("<td></td>");
+                    td4.text(response[i].Type);
+                    response[i].type == 0 ? td4.text("Tək nəfərlik") : td4.text("Cüt nəfərlik")
+                    $(".rooms tbody tr:last-child").append(td4);
+                    var td5 = $("<td></td>");
+                    td5.text(response[i].PersonCapacity+" nəfərlik");
+                    $(".rooms tbody tr:last-child").append(td5);
+                    var td6 = $("<td></td>");
+                    td6.text(response[i].ChildCapacity+ " nəfərlik"); 
+                    $(".rooms tbody tr:last-child").append(td6);
+                    var td7 = $("<td></td>");
+                    response[i].Status == true ? td7.text("Aktiv") : td7.text("Passiv");
+                    $(".rooms tbody tr:last-child").append(td7);
+
+                    var td8 = $("<td></td>");
+                    $(".rooms tbody tr:last-child").append(td8);
+                    var a1 = $("<a></a>");
+                    a1.text("Düzəliş et");
+                    a1.addClass("btn btn-primary btn-sm");
+                    a1.attr("href", "/rooms/update/" + response[i].Id);
+                    $(".rooms tbody tr:last-child td:last-child").append(a1);
+                    var td9 = $("<td></td>");
+                    $(".rooms tbody tr:last-child").append(td9);
+                    var a2 = $("<a></a>");
+                    a2.text("Sil");
+                    a2.addClass("btn btn-danger btn-sm");
+                    a2.attr("href", "/rooms/delete/" + response[i].Id);
+                    $(".rooms tbody tr:last-child td:last-child").append(a2);
+                }
+                    $(".rooms tbody td").addClass("text-center");
+
+            }),
+            error: (function (error) {
+                console.log(error);
+            })
+        })
+    })
 
 
 });

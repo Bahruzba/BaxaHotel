@@ -25,6 +25,7 @@ namespace BaxaHotel.Models
         [Display(Name = "Şəxsiyyət vəsiqəsinin nömrəsi")]
         public string SVnum { get; set; }
         public DateTime Created { get; set; }
+        public bool Status { get; set; }
         public List<Reservation> Reservations { get; set; }
     }
 }

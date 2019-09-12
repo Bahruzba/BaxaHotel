@@ -26,8 +26,8 @@
                         @Html.LabelFor(m => m.Type)
                         <select name="Type" class="form-control">
                             @(Model.Type == UserType.admin ? Html.Raw("<option selected value='0'>Admin</option>") : Html.Raw("<option value='0'>Admin</option>"))
-                            @(Model.Type == UserType.reception ? Html.Raw("<option selected value='0'>Reception</option>") : Html.Raw("<option value='0'>Reception</option>"))
-                            @(Model.Type == UserType.restaurant ? Html.Raw("<option selected value='0'>restaurant</option>") : Html.Raw("<option value='0'>restaurant</option>"))
+                            @(Model.Type == UserType.reception ? Html.Raw("<option selected value='1'>Restaurant</option>") : Html.Raw("<option value='1'>Restaurant</option>"))
+                            @(Model.Type == UserType.restaurant ? Html.Raw("<option selected value='2'>Reception</option>") : Html.Raw("<option value='2'>Reception</option>"))
                         </select>
                         @Html.ValidationMessageFor(m => m.Type, null, new { @class = "text-danger" })
                     </div>

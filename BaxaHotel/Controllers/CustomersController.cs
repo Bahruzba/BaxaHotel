@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using BaxaHotel.Models;
 using BaxaHotel.Data;
-using System.Collections.Generic ;
 
 namespace BaxaHotel.Controllers
 {
@@ -24,7 +23,7 @@ namespace BaxaHotel.Controllers
 
         public JsonResult GetList(string name)
         {
-           var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)).Select(c=> new {c.Id,c.FullName,c.PhoneNumber,c.Created,c.SVnum,c.Reservations }).ToList();
+           var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)).ToList();
             return Json(customers, JsonRequestBehavior.AllowGet);
         }
 

@@ -3,59 +3,81 @@
     ViewBag.Title = "Index";
 }
 
-    <div class="page">
-        <div class="row p-4 justify-content-center">
-            <div class="col-5">
-                <input class="p-1 mr-3" />
-                <button id="BtnSearchRoom" class="btn btn-success">Axtar</button>
-            </div>
-            <div class="col-5 text-center">
-                <a class="btn btn-primary" href="@Url.Action("create","rooms")">Otaq əlavə et</a>
-            </div>
+<div class="page">
+    <div id="SearchRoom" class="row p-4 justify-content-center">
+        <div class="col-5">
+            <input placeholder="Axtariş..." class="p-1 mr-3" />
+            <button id="BtnSearchRoom" class="btn btn-success">Axtar</button>
         </div>
-        <div class="row m-0">
-            <div class="col-11 p-0 text-right">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Sıra</th>
-                            <th class="text-center">Otaq</th>
-                            <th class="text-center">Qiymət</th>
-                            <th class="text-center">Çarpayı növü</th>
-                            <th class="text-center">Böyüklər</th>
-                            <th class="text-center">Uşaqlar</th>
-                            <th class="text-center">Status</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{var a = 1;}
-                        @foreach (var room in Model)
-                        {
-                        <tr>
-                            <td class="text-center">@(a++)</td>
-                            <td class="text-center">№ @room.Number</td>
-                            <td class="text-center">@room.Price.ToString("0.00") AZN</td>
-                            <td class="text-center">@room.Type nəfərlik</td>
-                            <td class="text-center">@room.PersonCapacity nəfər</td>
-                            <td class="text-center">@(room.ChildCapacity)</td>
-                            @{var b = "Boş";}
-                            @foreach (var reservation in room.Reservations)
-                            {
-                                if (reservation.Closed != null)
-                                {
-                                    b = "Dolu";
-                                    break;
-                                }
-                            }
-                            <td class="text-center">@b</td>
-                            <td><a class="btn btn-primary btn-sm" href="@Url.Action("update","rooms",new { id=room.Id})">Düzəliş et</a></td>
-                            <td><a class="btn btn-danger btn-sm" href="@Url.Action("delete","rooms",new { id=room.Id})">Sil</a></td>
-                        </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-5 text-center">
+            <a class="btn btn-primary" href="@Url.Action("create","rooms")">Otaq əlavə et</a>
         </div>
     </div>
+    <div class="row rooms m-0">
+        <div class="col-11 p-0 text-right">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Sıra</th>
+                        <th class="text-center">Otaq</th>
+                        <th class="text-center">Qiymət</th>
+                        <th class="text-center">Cüt nəfərlik çarpayı</th>
+                        <th class="text-center">Tək nəfərlik çarpayı</th>
+                        <th class="text-center">Uşaq çarpayısı</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Yaranma tarixi</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 1;}
+                    @foreach (var room in Model)
+                    {
+                        if (room.Status == true)
+                        {
+                    <tr>
+                        <td class="text-center">@(a++)</td>
+                        <td class="text-center">№ @room.Number</td>
+                        <td class="text-center">@room.Price.ToString("0.00") AZN</td>
+                        <td class="text-center">@room.PairPersonBedroom nəfərlik</td>
+                        <td class="text-center">@room.SinglePersonBedroom nəfər</td>
+                        <td class="text-center">@(room.ChildBedroom)</td>
+                        <td class="text-center">Aktiv</td>
+                        <td class="text-center">@room.Created.Day.ToString("00").@room.Created.Month.ToString("00").@room.Created.Year@(room.Created.Year % 1000 == 0 ? "-ci" : room.Created.Year % 100 == 0 || room.Created.Year % 10 == 3 || room.Created.Year % 10 == 4 ? "-cü" : room.Created.Year % 10 == 4 ? "-cü" : room.Created.Year % 100 == 10 || room.Created.Year % 100 == 30 ? "-cu" : room.Created.Year % 100 == 40 || room.Created.Year % 100 == 60 || room.Created.Year % 10 == 6 ? "-cı" : "-ci") il</td>
+                        <td><a class="btn btn-primary btn-sm" href="@Url.Action("update", "rooms", new { id = room.Id })">Düzəliş et</a></td>
+                        <td><a class="btn btn-warning text-white btn-sm" href="@Url.Action("passive", "rooms", new { id = room.Id })">Passivləşdir</a></td>
+                        <th>
+                            @(room.Reservations == null ? Html.Raw("<a class='btn btn-danger btn-sm' href='@Url.Action('delete', 'rooms', new { id = room.Id })'>Sil</a>") : Html.Raw(""))
+                        </th>
+                    </tr>
+                        }
+                    }
+
+                    @foreach (var room in Model)
+                    {
+                        if (room.Status == false)
+                        {
+                <tr class="table-dark">
+                    <td class="text-center">@(a++)</td>
+                    <td class="text-center">№ @room.Number</td>
+                    <td class="text-center">@room.Price.ToString("0.00") AZN</td>
+                    <td class="text-center">@room.PairPersonBedroom nəfərlik</td>
+                    <td class="text-center">@room.SinglePersonBedroom nəfər</td>
+                    <td class="text-center">@(room.ChildBedroom)</td>
+                    <td class="text-center text-danger">Passiv</td>
+                    <td class="text-center">@room.Created.Day.ToString("00").@room.Created.Month.ToString("00").@room.Created.Year@(room.Created.Year % 1000 == 0 ? "-ci" : room.Created.Year % 100 == 0 || room.Created.Year % 10 == 3 || room.Created.Year % 10 == 4 ? "-cü" : room.Created.Year % 10 == 4 ? "-cü" : room.Created.Year % 100 == 10 || room.Created.Year % 100 == 30 ? "-cu" : room.Created.Year % 100 == 40 || room.Created.Year % 100 == 60 || room.Created.Year % 10 == 6 ? "-cı" : "-ci") il</td>
+                    <td><a class="btn btn-primary btn-sm" href="@Url.Action("update", "rooms", new { id = room.Id })">Düzəliş et</a></td>
+                    <td><a class="btn btn-success btn-sm" href="@Url.Action("activate", "rooms", new { id = room.Id })">Aktivləşdir</a></td>
+                    <th>
+                        @(room.Reservations == null ? Html.Raw("<a class='btn btn-danger btn-sm' href='@Url.Action('delete', 'rooms', new { id = room.Id })'>Sil</a>") : Html.Raw(""))
+                    </th>
+                </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

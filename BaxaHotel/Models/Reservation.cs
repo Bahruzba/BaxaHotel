@@ -21,5 +21,8 @@ namespace BaxaHotel.Models
         [Required(ErrorMessage = "Müştəri nömrəsini yazın.")]
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+
     }
 }

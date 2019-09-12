@@ -24,16 +24,17 @@ namespace BaxaHotel.Models
         [Required(ErrorMessage ="Otağın statusu qeyd olunmayıb.")]
         public bool Status { get; set; }
         [Required(ErrorMessage ="Otağın böyüklər üçün tutumunu yazın.")]
-        [Range(1,5, ErrorMessage ="5 nəfərdən artıq tutumu olan otaq yoxdur.")]
-        public int PersonCapacity { get; set; }
+        [Range(1, 5, ErrorMessage = "5-dən artıq böyük üçün təkli çarpayısı olan otaq yoxdur.")]
+        public int SinglePersonBedroom { get; set; }
+        [Range(1, 3, ErrorMessage = "3-dən artıq böyük üçün çütli çarpayısı olan otaq yoxdur.")]
+        public int PairPersonBedroom { get; set; }
         [Required(ErrorMessage = "Otağın uşaqlar üçün tutumunu yazın.")]
-        [Range(1, 5, ErrorMessage = "5 nəfər uşaqdan artıq tutumu olan otaq yoxdur.")]
-        public int ChildCapacity { get; set; }
-        [Required(ErrorMessage ="Çarpayının növünü seçin.")]
-        public BedType Type { get; set; }
+        [Range(1, 5, ErrorMessage = "5-dən artıq uşaq çarpayısı olan otaq yoxdur.")]
+        public int ChildBedroom { get; set; }
         [Required(ErrorMessage ="Otaq haqqında məlumatları yazın.")]
         [MaxLength(300, ErrorMessage ="Otaq haqqında məlumatları yazın.")]
         public string Desc { get; set; }
+        public DateTime Created { get; set; }
         public List<Reservation> Reservations { get; set; }
     }
 }
