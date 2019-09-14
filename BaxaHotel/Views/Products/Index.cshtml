@@ -1,0 +1,72 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="page">
+        <div id="SearcProduct" class="row p-4 m-0 justify-content-center">
+            <div class="col-5">
+                <input placeholder="Axtariş..." class="p-1 mr-3" />
+                <button id="BtnSearchProduct" class="btn btn-success">Axtar</button>
+            </div>
+            <div class="col-5 text-center">
+                <a class="btn btn-primary" href="@Url.Action("create","Product")">Məhsul əlavə et</a>
+            </div>
+        </div>
+        <div class="row mytable products m-0">
+            <div class="col-11 text-right">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Sıra</th>
+                            <th class="text-center">Məhsul</th>
+                            <th class="text-center">Sayı</th>
+                            <th class="text-center">Kateqoriya</th>
+                            <th class="text-center">Yaranma tarixi</th>
+                            <th class="text-center">Status</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var a = 1;}
+                        @foreach (var product in Model)
+                        {
+                            if (product.Status == true)
+                            {
+                                <tr>
+                                    <td class="text-center">@(a++)</td>
+                                    <td class="text-center">@product.FullName</td>
+                                    <td class="text-center">@product.PhoneNumber</td>
+                                    <td class="text-center">@product.Created.ToString("dd MMM yyyy") il</td>
+                                    <td class="text-center">@(@product.Reservations.Count == 0 ? "Yoxdur" : @product.Reservations.Count.ToString() + "  rezervasiya")</td>
+                                    <td class="stat text-center">Aktiv</td>
+                                    <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action(" update","products",new { id=product.Id})">Düzəliş et</a></td>
+                                    <td class="text-center"><a class="activate btn text-white btn-sm btn-warning" name="/products" value="@product.Id">@(product.Status == true ? "Passivləşdir" : "Aktivləşdir")</a></td>
+                                    <td class="text-center"><a class="btn btn-danger btn-sm text-white" name="/products" value="@product.Id">Sil</a></td>
+                                </tr>
+                            }
+                        }
+                        @foreach (var product in Model)
+                        {
+                            if (product.Status == false)
+                            {
+                                <tr class="table-dark">
+                                    <td class="text-center">@(a++)</td>
+                                    <td class="text-center">@product.FullName</td>
+                                    <td class="text-center">@product.PhoneNumber</td>
+                                    <td class="text-center">@product.Created.ToString("dd MMM yyyy") il</td>
+                                    <td class="text-center">@(@product.Reservations.Count == 0 ? "Yoxdur" : @product.Reservations.Count.ToString() + "  rezervasiya")</td>
+                                    <td class="stat text-center text-danger">Passiv</td>
+                                    <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action(" update","products",new { id=product.Id})">Düzəliş et</a></td>
+                                    <td class="text-center"><a class="activate btn text-white btn-sm btn-success" name="/products" value="@product.Id">@(product.Status == true ? "Passivləşdir" : "Aktivləşdir")</a></td>
+                                    <td class="text-center"><a class="btn btn-danger btn-sm text-white" name="/products" value="@product.Id">Sil</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

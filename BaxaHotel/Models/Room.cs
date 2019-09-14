@@ -34,6 +34,6 @@ namespace BaxaHotel.Models
         [DisplayName("Uşaq üçün yataq sayı")]
         public int? ChildBedroom { get; set; }
         public DateTime Created { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        public List<Reservations> Reservations { get; set; }
     }
 }

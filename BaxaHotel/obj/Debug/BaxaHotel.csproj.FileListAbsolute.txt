@@ -193,3 +193,6 @@ C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.fixbux
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddIsDeleteToTables.resources
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddReseptionListToUsers.resources
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.Duzelis.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddErrorMessageToCategoryProduct.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddNulableToCreatedReseption.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.RemoveNulableFromCreatedReservation.resources

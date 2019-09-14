@@ -29,6 +29,6 @@ namespace BaxaHotel.Models
         public bool Status { get; set; }
         public bool? IsDelete { get; set; }
         public UserType Type { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        public List<Reservations> Reservations { get; set; }
     }
 }

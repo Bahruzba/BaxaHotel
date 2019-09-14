@@ -40,8 +40,11 @@ namespace BaxaHotel.Controllers
             {
                 return View(customer);
             }
-
-
+            if(!long.TryParse(customer.SVnum, out long n))
+            {
+                ModelState.AddModelError("SVnum", "Şəxsiyyət vəsiqəsinin nömrəsinin düzgün yazın, məsələn: 12345678");
+                return View(customer);
+            }
             customer.IsDelete = false;
             customer.Created = DateTime.Now;
             context.Customers.Add(customer);
@@ -66,6 +69,12 @@ namespace BaxaHotel.Controllers
         {
             if (!ModelState.IsValid)
             {
+                return View(customer);
+            }
+
+            if (!long.TryParse(customer.SVnum, out long n))
+            {
+                ModelState.AddModelError("SVnum", "Şəxsiyyət vəsiqəsinin nömrəsinin düzgün yazın, məsələn: 12345678");
                 return View(customer);
             }
 

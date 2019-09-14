@@ -1,0 +1,77 @@
+﻿@model List<Reservations>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page">
+    <div id="SearchReservation" class="row p-4 m-0 justify-content-center">
+        <div class="col-5">
+            <input placeholder="Axtariş..." class="p-1 mr-3" />
+            <button id="BtnSearchReservation" class="btn btn-success">Axtar</button>
+        </div>
+        <div class="col-5 text-center">
+            <a class="btn btn-primary" href="@Url.Action("index","books")">Müştəri əlavə et</a>
+        </div>
+    </div>
+    <div class="row mytable reservations m-0">
+        <div class="col-11 text-right">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Sıra</th>
+                        <th class="text-center">Müştəri</th>
+                        <th class="text-center">Otaq nömrəsi</th>
+                        <th class="text-center">Başlama tarixi</th>
+                        <th class="text-center">Bitmə tarixi</th>
+                        <th class="text-center">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 1;}
+                    @foreach (var reservation in Model)
+                    {
+                        if (reservation.Start > DateTime.Now)
+                        {
+                            <tr class="text-center">
+                                <td class="text-center">@(a++)</td>
+                                <td class="text-center">@reservation.Customer.FullName</td>
+                                <td class="text-center">№ @reservation.Room.Number</td>
+                                <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
+                                <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
+                                <td class="text-center mt-2 btn-sm btn btn-primary">Olacaq</td>
+                            </tr>
+                        }
+                    }
+                    @foreach (var reservation in Model)
+                    {
+                        if (reservation.Start < DateTime.Now && reservation.Closed == null)
+                        {
+                            <tr class="text-center">
+                                <td class="text-center">@(a++)</td>
+                                <td class="text-center">@reservation.Customer.FullName</td>
+                                <td class="text-center">№ @reservation.Room.Number</td>
+                                <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
+                                <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
+                                <td class="text-center mt-2 btn-sm btn btn-success">Aktiv</td>
+                            </tr>
+                        }
+                    }
+                    @foreach (var reservation in Model)
+                    {
+                        if (reservation.Closed < DateTime.Now)
+                        {
+                            <tr class="text-center">
+                                <td class="text-center">@(a++)</td>
+                                <td class="text-center">@reservation.Customer.FullName</td>
+                                <td class="text-center">№ @reservation.Room.Number</td>
+                                <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
+                                <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
+                                <td class="text-center mt-2 btn-sm btn btn-primary">Bitmiş</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

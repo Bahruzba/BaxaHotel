@@ -30,23 +30,15 @@ namespace BaxaHotel.Controllers
             }
 
             List<Room> rooms = context.Rooms.Include("Reservations").Where(r => r.IsDelete == false && r.Status == true &&
-            searchRooms.MinPrice != null ? r.Price >= searchRooms.MinPrice : true &&
-            searchRooms.MaxPrice != null ? r.Price <= searchRooms.MaxPrice : true &&
-            searchRooms.PairPersonBedroom != null ? r.PairPersonBedroom == searchRooms.PairPersonBedroom : true &&
-            searchRooms.SinglePersonBedroom != null ? r.SinglePersonBedroom == searchRooms.SinglePersonBedroom : true &&
-            searchRooms.ChildBedroom != null ? r.ChildBedroom == searchRooms.ChildBedroom : true).ToList();
+            (searchRooms.MinPrice != null ? r.Price >= searchRooms.MinPrice : true) &&
+            (searchRooms.MaxPrice != null ? r.Price <= searchRooms.MaxPrice : true) &&
+            (searchRooms.PairPersonBedroom != null ? r.PairPersonBedroom == searchRooms.PairPersonBedroom : true) &&
+            (searchRooms.SinglePersonBedroom != null ? r.SinglePersonBedroom == searchRooms.SinglePersonBedroom : true) &&
+            (searchRooms.ChildBedroom != null ? r.ChildBedroom == searchRooms.ChildBedroom : true)).ToList();
             List<Room> rooms1 = new List<Room>();
-            return Content(rooms.Count.ToString());
-
-            //rooms1.AddRange(rooms);
-            //if (rooms1.Count == rooms.Count)
-            //{
-            //    return Content("sedrfgyhu");
-            //}
-            //int a = -1;
+            rooms1.AddRange(rooms);
             foreach (var room in rooms)
             {
-                //a++;
                 foreach (var reservation in room.Reservations)
                 {
                     if (reservation.Start < searchRooms.Start && reservation.End > searchRooms.Start || searchRooms.End > reservation.Start && searchRooms.Start < reservation.Start)
@@ -54,63 +46,42 @@ namespace BaxaHotel.Controllers
                         rooms1.Remove(room);
                         break;
                     }
-
                 }
             }
-
             SearchRoomsToBook searchRoomsToBook = new SearchRoomsToBook
             {
                 SearchRooms=searchRooms,
                 Rooms= rooms
             };
             return View(searchRoomsToBook);
-            return Content(rooms1[0].Id.ToString() + "  " + rooms1[1].Id.ToString() + "  " + rooms1[2].Id.ToString() + "  " );
         }
 
+        public ActionResult SelectCustomer(DateTime start, DateTime end, int id)
+        {
+            SearcCustomerToBook searcCustomerToBook = new SearcCustomerToBook
+            {
+                Customers = context.Customers.ToList(),
+                Start = start,
+                End = end,
+                Id = id
+            };
+            return View(searcCustomerToBook);
+        }
 
-        //public ActionResult Search(SearchRooms searchRooms=null)
-        //{
-        //    if (searchRooms.Start == null)
-        //    {
-        //        ModelState.AddModelError("Start", "Başlanğıc tarixini yazın");
-        //    }
-        //    if (searchRooms.End == null)
-        //    {
-        //        ModelState.AddModelError("End", "Bitmə tarixini yazın");
-        //    }
-
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(searchRooms);
-        //    }
-
-
-        //    List<Room> rooms = context.Rooms.Include("Reservations")
-        //        .Where(r => r.IsDelete == false && r.Status == true).ToList();
-        //    List<Room> rooms1 = new List<Room>();
-        //    rooms1.AddRange(rooms);
-        //    foreach (var room in rooms)
-        //    {
-        //        foreach (var reservation in room.Reservations)
-        //        {
-        //            if (reservation.Start < searchRooms.Start && reservation.End > searchRooms.Start||searchRooms.End>reservation.Start&& searchRooms.Start<reservation.Start)
-        //            {
-        //                rooms1.Remove(room);
-        //                break;
-        //            }
-
-        //        }
-        //    }
-
-        //    SearchRoomsToBook searchRoomsToBook = new SearchRoomsToBook
-        //    {
-        //        SearchRooms=searchRooms,
-        //        Rooms=rooms1
-
-        //    };
-
-        //    return View(searchRoomsToBook);
-
-        //}
+        public ActionResult CompleteReservation(int id, int cid, DateTime start, DateTime end )
+        {
+            Reservations reservation = new Reservations
+            {
+                Start = start,
+                End = end,
+                Created = DateTime.Now,
+                RoomId =id,
+                CustomerId=cid,
+                UserId=87
+            };
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
+            return RedirectToAction("index", "rooms");
+        }
     }
 }

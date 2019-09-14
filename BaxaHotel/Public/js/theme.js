@@ -535,6 +535,90 @@ $(window).on('load resize', function () {
             })
         })
 
+        $("#BtnSearchRoom").click(function () {
+            var name = $("#SearchRoom input").val();
+            $.ajax({
+                url: "/reservations/getlist?name=" + name,
+                type: "get",
+                dataType: "json",
+                success: (function (response) {
+                    $(".reservations tbody tr").remove();
+                    for (var i = 0; i < response.length; i++) {
+                        var tr = $("<tr></tr>");
+                        $(".reservations tbody").append(tr);
+                        var td1 = $("<td></td>");
+                        td1.text(i + 1);
+                        $(".reservations tbody tr:last-child").append(td1);
+                        var td2 = $("<td></td>");
+                        td2.text("№ " + response[i].Number);
+                        $(".reservations tbody tr:last-child").append(td2);
+                        var td3 = $("<td></td>");
+                        td3.text(response[i].Price + ".00 AZN");
+                        $(".reservations tbody tr:last-child").append(td3);
+                        var td4 = $("<td></td>");
+                        td4.text(response[i].PairPersonBedroom + " ədəd");
+                        $(".reservations tbody tr:last-child").append(td4);
+                        var td5 = $("<td></td>");
+                        td5.text(response[i].SinglePersonBedroom + " ədəd");
+                        $(".reservations tbody tr:last-child").append(td5);
+                        var td6 = $("<td></td>");
+                        td6.text(response[i].ChildBedroom + " ədəd");
+                        $(".reservations tbody tr:last-child").append(td6);
+                        var td7 = $("<td></td>");
+                        if (response[i].Status == true) {
+                            td7.text("Aktiv");
+                            td7.addClass("stat");
+                        } else {
+                            td7.text("Passiv");
+                            td7.addClass("stat text-danger");
+                        }
+                        $(".reservations tbody tr:last-child").append(td7);
+                        var td8 = $("<td></td>");
+                        td8.text(response[i].Date + " il");
+                        $(".reservations tbody tr:last-child").append(td8);
+
+
+                        var td9 = $("<td></td>");
+                        $(".reservations tbody tr:last-child").append(td9);
+                        var a1 = $("<a></a>");
+                        a1.text("Düzəliş et");
+                        a1.addClass("btn btn-primary btn-sm");
+                        a1.attr("href", "/rooms/update/" + response[i].Id);
+                        $(".reservations tbody tr:last-child td:last-child").append(a1);
+
+                        var td10 = $("<td></td>");
+                        $(".reservations tbody tr:last-child").append(td10);
+                        var a2 = $("<a></a>");
+                        if (response[i].Status == true) {
+                            a2.text("Passivləşdir");
+                            a2.addClass("btn activate btn-warning text-white btn-sm");
+                        } else {
+                            a2.text("Aktivləşdir");
+                            a2.addClass("btn activate btn-success text-white btn-sm").parent().siblings(".stat").addClass("text-danger").parent().addClass("table-dark");
+                            $(".reservations tbody tr:last-child").addClass("table-dark");
+                        }
+                        a2.attr("name", "/rooms");
+                        a2.attr("value", response[i].Id);
+                        $(".rooms tbody tr:last-child td:last-child").append(a2);
+
+                        var td11 = $("<td></td>");
+                        $(".rooms tbody tr:last-child").append(td11);
+                        var a3 = $("<a></a>");
+                        a3.text("Sil");
+                        a3.addClass("btn btn-danger text-white btn-sm");
+                        a3.attr("name", "/rooms");
+                        a3.attr("value", response[i].Id);
+                        $(".rooms tbody tr:last-child td:last-child").append(a3);
+                    }
+                    $(".rooms tbody td").addClass("text-center");
+
+                }),
+                error: (function (error) {
+                    console.log(error);
+                })
+            })
+        })
+
 
         $(document).on("click", ".mytable tbody .btn-danger", function () {
             var id = $(this).attr("value");
@@ -574,14 +658,26 @@ $(window).on('load resize', function () {
 
             })
         })
+
+
         var d = new Date();
         var a = "";
         var b = "";
         if (d.getMonth() < 10) { a = "0" };
         if (d.getDate() < 10) { b = "0" };
 
-        $(".booking .date [min]").attr("value", d.getFullYear() + "-" +a+ (d.getMonth()+1) +"-"+b+ d.getDate());
+        if ($(".booking .date [min]").val() != undefined && $(".booking .date [min]").val().length != 10) {
+                $(".booking .date [min]").attr("value", d.getFullYear() + "-" + a + (d.getMonth() + 1) + "-" + b + d.getDate());
+        }
 
+
+        $(".selectCustomer tbody tr").click(function () {
+            $(".selectCustomer tbody tr").removeClass("bg-success text-white");
+            $(this).addClass("bg-success text-white");
+            var a = $(".btnReserv").attr("href");
+            var index = a.lastIndexOf("=");
+            $(".btnReserv").removeClass("disabled").attr("href", a.substr(0,index+1) + $(this).attr("id"));
+        })
     });
 
 window.bigbucket = {

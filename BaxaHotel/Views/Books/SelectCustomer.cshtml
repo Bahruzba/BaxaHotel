@@ -1,0 +1,48 @@
+﻿@model SearcCustomerToBook
+
+@{
+    ViewBag.Title = "SelectCustomer";
+}
+
+    <div class="page">
+        <div id="SearchCustomer" class="row p-4 m-0 justify-content-center">
+            <div class="col-5">
+                <input placeholder="Axtariş..." class="p-1 mr-3" />
+                <button id="BtnSearchCustomer" class="btn btn-success">Axtar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-11 my-4 d-flex justify-content-around">
+                <div style="font-size:18px">Rezerv olunacaq tarix:  @Model.Start.ToString("dd.MM.yyyy") - @Model.End.ToString("dd.MM.yyyy") cu il</div>
+                <div>
+                    <a class="btn btnReserv btn-primary disabled" href="@Url.Action("CompleteReservation", "books", new { start=Model.Start, end=Model.End,id=Model.Id, Cid="0"})" >Rezerv et</a>
+                </div>
+            </div>
+        </div>
+        <div class="row selectCustomer m-0">
+            <div class="col-11 text-right">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Sıra</th>
+                            <th class="text-center">Müştəri</th>
+                            <th class="text-center">Əlaqə nömrəsi</th>
+                            <th class="text-center">Şəxsiyyət vəsiqəsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var a = 1;}
+                        @foreach (var customer in Model.Customers)
+                        {
+                            <tr id="@customer.Id"y>
+                                <td class="text-center" >@(a++)</td>
+                                <td class="text-center">@customer.FullName</td>
+                                <td class="text-center">@customer.PhoneNumber</td>
+                                <td class="text-center">AZE @customer.SVnum</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

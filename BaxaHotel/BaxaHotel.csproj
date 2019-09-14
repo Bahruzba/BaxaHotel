@@ -130,6 +130,8 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\databasedoldurController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\BaxaHotelContext.cs" />
@@ -225,13 +227,28 @@
     <Compile Include="Migrations\201909131448572_Duzelis.Designer.cs">
       <DependentUpon>201909131448572_Duzelis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.cs" />
+    <Compile Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.Designer.cs">
+      <DependentUpon>201909140828199_AddErrorMessageToCategoryProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141439005_AddNulableToCreatedReseption.cs" />
+    <Compile Include="Migrations\201909141439005_AddNulableToCreatedReseption.Designer.cs">
+      <DependentUpon>201909141439005_AddNulableToCreatedReseption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.cs" />
+    <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.Designer.cs">
+      <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CategoryProduct.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Reservations.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginAction.cs" />
+    <Compile Include="ViewModels\SearcCustomerToBook.cs" />
     <Compile Include="ViewModels\SearchRooms.cs" />
     <Compile Include="ViewModels\SearchRoomsToBook.cs" />
   </ItemGroup>
@@ -432,6 +449,9 @@
     <Content Include="Views\Rooms\Update.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Books\Search.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Books\SelectCustomer.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909070721056_init.resx">
@@ -499,6 +519,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909131448572_Duzelis.resx">
       <DependentUpon>201909131448572_Duzelis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.resx">
+      <DependentUpon>201909140828199_AddErrorMessageToCategoryProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141439005_AddNulableToCreatedReseption.resx">
+      <DependentUpon>201909141439005_AddNulableToCreatedReseption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.resx">
+      <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
