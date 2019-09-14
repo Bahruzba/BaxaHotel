@@ -115,7 +115,8 @@ namespace BaxaHotel.Controllers
             if (room.Status == true)
             {
                 room.Status = false;
-            } else
+            }
+            else
             {
                 room.Status = true;
             }

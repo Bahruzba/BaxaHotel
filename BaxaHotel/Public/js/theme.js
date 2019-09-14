@@ -574,12 +574,15 @@ $(window).on('load resize', function () {
 
             })
         })
+        var d = new Date();
+        var a = "";
+        var b = "";
+        if (d.getMonth() < 10) { a = "0" };
+        if (d.getDate() < 10) { b = "0" };
 
+        $(".booking .date [min]").attr("value", d.getFullYear() + "-" +a+ (d.getMonth()+1) +"-"+b+ d.getDate());
 
-
-
-
-});
+    });
 
 window.bigbucket = {
     colors: {

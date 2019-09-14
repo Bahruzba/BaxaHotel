@@ -192,3 +192,4 @@ C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.doNula
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.fixbuxx.resources
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddIsDeleteToTables.resources
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddReseptionListToUsers.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.Duzelis.resources
