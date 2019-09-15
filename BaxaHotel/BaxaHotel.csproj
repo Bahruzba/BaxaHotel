@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201909151322540_AddFileUploadToCustomer.Designer.cs">
       <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909151957071_UpdateAuto.cs" />
+    <Compile Include="Migrations\201909151957071_UpdateAuto.Designer.cs">
+      <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoryProduct.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -545,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909151322540_AddFileUploadToCustomer.resx">
       <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909151957071_UpdateAuto.resx">
+      <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

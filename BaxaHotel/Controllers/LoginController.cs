@@ -1,4 +1,5 @@
 ﻿using BaxaHotel.Data;
+using BaxaHotel.Helper;
 using BaxaHotel.Models;
 using BaxaHotel.ViewModels;
 using System;
@@ -35,7 +36,7 @@ namespace BaxaHotel.Controllers
             context.SaveChanges();
             Response.Cookies["Token"].Value = user.Token;
             Response.Cookies["Token"].Expires = DateTime.Now.AddDays(1);
-            return RedirectToAction("index", "reservations");
+            return RedirectToAction("index", "customers");
         }
 
         public ActionResult logout()

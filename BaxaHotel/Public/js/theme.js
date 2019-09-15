@@ -786,6 +786,7 @@ $(window).on('load resize', function () {
             $("[booking] tbody").empty();
         })
 
+
         var d = new Date();
         var a = "";
         var b = "";

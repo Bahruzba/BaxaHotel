@@ -16,6 +16,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
             if (user.Type == UserType.restaurant)
             {
                 return RedirectToAction("index", "login");
@@ -54,6 +55,12 @@ namespace BaxaHotel.Controllers
                 SearchRooms=searchRooms,
                 Rooms= rooms
             };
+            if (searchRooms.Start >= searchRooms.End)
+            {
+                ModelState.AddModelError("Start","Tarixləri düz yazın");
+                return View(searchRooms);
+            }
+
             return View(searchRoomsToBook);
         }
 
@@ -65,6 +72,8 @@ namespace BaxaHotel.Controllers
             {
                 return RedirectToAction("index", "login");
             }
+            ViewBag.User = user;
+
 
             ViewBag.PriceRoom =(end - start).TotalDays*context.Rooms.Find(id).Price;
             SearcCustomerToBook searcCustomerToBook = new SearcCustomerToBook
@@ -85,6 +94,7 @@ namespace BaxaHotel.Controllers
             {
                 return RedirectToAction("index", "login");
             }
+            ViewBag.User = user;
 
             Reservations reservation = new Reservations
             {
@@ -109,6 +119,7 @@ namespace BaxaHotel.Controllers
             {
                 return RedirectToAction("index", "login");
             }
+            ViewBag.User = user;
 
             Reservations reservation = context.Reservations.Find(id);
             if (reservation == null||reservation.Closed != null)

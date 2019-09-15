@@ -24,14 +24,19 @@ namespace BaxaHotel.Helper
 
             if (HttpContext.Current.Request.Cookies["token"] == null)
             {
-                string token = HttpContext.Current.Request.Cookies["token"].ToString();
-                User user = context.Users.FirstOrDefault(u=>u.Token==token);
-                if (user == null)
-                {
                     filterContext.Result = new RedirectResult("/login");
                     return;
-                }
             }
+
+            string token = HttpContext.Current.Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+
+            if (user == null)
+            {
+                filterContext.Result = new RedirectResult("/login");
+                return;
+            }
+
         }
     }
 }

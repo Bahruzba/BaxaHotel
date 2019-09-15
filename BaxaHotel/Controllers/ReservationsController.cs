@@ -15,6 +15,10 @@ namespace BaxaHotel.Controllers
         // GET: Reservation
         public ActionResult Index()
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+
             List<Reservations> reservations = context.Reservations.Include("Customer").Include("User").Include("Room").OrderBy(r=>r.End).ToList();
 
             return View(reservations);

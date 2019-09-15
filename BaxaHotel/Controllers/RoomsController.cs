@@ -14,12 +14,20 @@ namespace BaxaHotel.Controllers
         // GET: Rooms
         public ActionResult Index()
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+
             List<Room> rooms = context.Rooms.Include("Reservations").Where(r=>r.IsDelete==false).OrderBy(r=>r.Number).ToList();
             return View(rooms);
         }
 
         public JsonResult GetList(string name)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+
             var rooms = context.Rooms.Where(r => r.Number.ToString().Contains(name)&&r.IsDelete == false).OrderBy(r=>r.Number).ToList();
             return Json(rooms.Select(r => new { r.Id, r.Number, r.Price, r.PairPersonBedroom, r.SinglePersonBedroom, r.ChildBedroom, r.Status,r.IsDelete, Date = r.Created.ToString("dd MMM yyyy") }), JsonRequestBehavior.AllowGet);
         }
@@ -27,11 +35,27 @@ namespace BaxaHotel.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             return View();
         }
         [HttpPost]
         public ActionResult Create(Room room)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(room);
@@ -52,6 +76,14 @@ namespace BaxaHotel.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             Room room = context.Rooms.Find(id);
             if (room == null||room.IsDelete==true)
             {
@@ -63,6 +95,14 @@ namespace BaxaHotel.Controllers
         [HttpPost]
         public ActionResult Update(Room room)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(room);
@@ -86,6 +126,14 @@ namespace BaxaHotel.Controllers
 
         public ActionResult Delete(int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             Room room = context.Rooms.Include("Reservations").FirstOrDefault(p=>p.Id==id);
             if (room == null)
             {

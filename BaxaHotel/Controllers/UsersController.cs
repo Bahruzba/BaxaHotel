@@ -17,6 +17,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User user = context.Users.FirstOrDefault(u=>u.Token==token);
+            ViewBag.User = user;
             if (user.Type != UserType.admin)
             {
                 return RedirectToAction("index", "login");
@@ -29,6 +30,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
             if (user.Type != UserType.admin)
             {
                 return new HttpNotFoundResult();
@@ -43,6 +45,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
             if (user.Type != UserType.admin)
             {
                 return RedirectToAction("index", "login");
@@ -56,6 +59,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
             if (usr.Type != UserType.admin)
             {
                 return RedirectToAction("index", "login");
@@ -86,13 +90,21 @@ namespace BaxaHotel.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            User user = context.Users.Find(id);
-            if (user == null||user.IsDelete==true)
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
+            if (user.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
+            User usr = context.Users.Find(id);
+            if (usr == null||usr.IsDelete==true)
             {
                 return HttpNotFound();
             }
 
-            return View(user);
+            return View(usr);
         }
 
         [HttpPost]
@@ -100,6 +112,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = user;
             if (usr.Type != UserType.admin)
             {
                 return RedirectToAction("index", "login");
@@ -131,6 +144,7 @@ namespace BaxaHotel.Controllers
         {
             string token = Request.Cookies["token"].Value.ToString();
             User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            ViewBag.User = usr;
             if (usr.Type != UserType.admin)
             {
                 return RedirectToAction("index", "login");

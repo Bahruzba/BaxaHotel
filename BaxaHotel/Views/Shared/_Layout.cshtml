@@ -124,14 +124,14 @@
                     </div>
                 </div>
                 <ul id="main-menu" class="metismenu">
-                    <li><a href="@Url.Action(" index","reservations")"><i class="ti-home"></i><span>Rezervasiyalar</span></a></li>
-                    <li><a href="@Url.Action(" index","customers")"><i class="ti-home"></i><span>Müştərilər</span></a></li>
+                    <li><a href="@Url.Action("index","reservations")"><i class="ti-home"></i><span>Rezervasiyalar</span></a></li>
+                    <li><a href="@Url.Action("index","customers")"><i class="ti-home"></i><span>Müştərilər</span></a></li>
                     @if (user.Type == UserType.admin)
                     {
                         <li><a href="@Url.Action("index","users")"><i class="ti-user"></i><span>İstifadəçilər</span></a></li>
                     }
                     <li><a href="@Url.Action("index","rooms")"><i class="ti-email"></i><span>Otaqlar</span></a></li>
-                    <li><a href="@Url.Action("index","logout")"><i class="ti-notepad"></i><span>Hesabdan çıx</span></a></li>
+                    <li><a href="@Url.Action("logout","login")"><i class="ti-notepad"></i><span>Hesabdan çıx</span></a></li>
                 </ul>
             </nav>
         </div>

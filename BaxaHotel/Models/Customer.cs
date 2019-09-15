@@ -29,9 +29,6 @@ namespace BaxaHotel.Models
         public bool Status { get; set; }
         public bool? IsDelete { get; set; }
         [MaxLength(100,ErrorMessage ="Şəklin uzunluğu 100 xakarterden uzun olmamalıdır.")]
-        public string Photo { get; set; }
-        [NotMapped]
-        public HttpPostedFileBase MyProperty { get; set; }
         public List<Reservations> Reservations { get; set; }
     }
 }

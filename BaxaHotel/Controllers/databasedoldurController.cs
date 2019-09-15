@@ -12,12 +12,6 @@ namespace BaxaHotel.Controllers
     public class databasedoldurController : BaseController
     {
         // GET: databasedoldur        
-        private BaxaHotelContext context;
-        public databasedoldurController()
-        {
-            context = new BaxaHotelContext();
-        }
-
         public ActionResult Index()
         {
 
