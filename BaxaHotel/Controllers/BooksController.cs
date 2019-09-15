@@ -11,7 +11,7 @@ namespace BaxaHotel.Controllers
 {
     public class BooksController : BaseController
     {
-        // GET: Books
+        //Searc Rooms for Reservations
         public ActionResult Index(SearchRooms searchRooms = null)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -63,7 +63,8 @@ namespace BaxaHotel.Controllers
 
             return View(searchRoomsToBook);
         }
-
+        
+        //Searc Rooms for Reservations
         public ActionResult SelectCustomer(DateTime start, DateTime end, int id)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -85,7 +86,8 @@ namespace BaxaHotel.Controllers
             };
             return View(searcCustomerToBook);
         }
-
+        
+        //SelectCustomer for reservation
         public ActionResult CompleteReservation(int id, int cid, DateTime start, DateTime end )
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -111,6 +113,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index", "rooms");
         }
 
+        //finis reservations
         public ActionResult FinishReservation(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();

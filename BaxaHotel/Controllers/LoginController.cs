@@ -19,6 +19,7 @@ namespace BaxaHotel.Controllers
             return View();
         }
 
+        //login
         [HttpPost]
         public ActionResult Index(LoginAction login)
         {
@@ -39,6 +40,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index", "customers");
         }
 
+        //logout
         public ActionResult logout()
         {
             if (Request.Cookies["Token"] != null)

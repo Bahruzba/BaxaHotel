@@ -13,6 +13,7 @@ namespace BaxaHotel.Controllers
     [Auth]
     public class UsersController : BaseController
     {
+        //list users
         public ActionResult Index()
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -26,6 +27,7 @@ namespace BaxaHotel.Controllers
             return View(users);
         }
 
+        //search users
         public ActionResult Getlist(string name)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -40,6 +42,7 @@ namespace BaxaHotel.Controllers
             return Json(users.Select(u => new { u.Id, u.FullName, u.UserName, Date = u.Created.ToString("dd MMM yyyy"), u.Type, u.Status, u.IsDelete}), JsonRequestBehavior.AllowGet);
         }
 
+        //view create users
         [HttpGet]
         public ActionResult Create()
         {
@@ -54,6 +57,7 @@ namespace BaxaHotel.Controllers
             return View();
         }
 
+        //create users
         [HttpPost]
         public ActionResult Create(User user)
         {
@@ -87,6 +91,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index");
         }
 
+        //view update users
         [HttpGet]
         public ActionResult Update(int id)
         {
@@ -107,6 +112,7 @@ namespace BaxaHotel.Controllers
             return View(usr);
         }
 
+        //update users
         [HttpPost]
         public ActionResult Update(User user)
         {
@@ -140,6 +146,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index");
         }
 
+        //delete users
         public ActionResult Delete(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -166,6 +173,7 @@ namespace BaxaHotel.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        //active-passive users
         public ActionResult Activate(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();

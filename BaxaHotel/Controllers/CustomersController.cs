@@ -17,6 +17,8 @@ namespace BaxaHotel.Controllers
         {
             context = new BaxaHotelContext();
         }
+
+        //list customer
         public ActionResult Index()
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -27,12 +29,14 @@ namespace BaxaHotel.Controllers
 
         }
 
+        //searc customers
         public JsonResult GetList(string name)
         {
             var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)&&c.IsDelete==false).OrderBy(c=>c.FullName).ToList();
             return Json(customers.Select(c => new { c.Id, c.FullName, c.PhoneNumber, Date = c.Created.ToString("dd MMM yyyy"), c.IsDelete, c.Status, c.Reservations.Count }), JsonRequestBehavior.AllowGet);
         }
 
+        //create view customer
         [HttpGet]
         public ActionResult Create()
         {
@@ -43,6 +47,7 @@ namespace BaxaHotel.Controllers
             return View();
         }
 
+        //create customer
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
@@ -81,6 +86,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index");
         }
 
+        //update view customer
         [HttpGet]
         public ActionResult Update(int id)
         {
@@ -97,6 +103,7 @@ namespace BaxaHotel.Controllers
             return View(customer);
         }
 
+        //update customer
         [HttpPost]
         public ActionResult Update(Customer customer)
         {
@@ -128,6 +135,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index");
         }
 
+        //delete customer
         public ActionResult Delete(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -151,6 +159,7 @@ namespace BaxaHotel.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        //active-passive customer
         public ActionResult Activate(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();

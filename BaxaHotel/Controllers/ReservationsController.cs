@@ -12,7 +12,7 @@ namespace BaxaHotel.Controllers
     [Auth]
     public class ReservationsController : BaseController
     {
-        // GET: Reservation
+        //list Reservation
         public ActionResult Index()
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -24,6 +24,7 @@ namespace BaxaHotel.Controllers
             return View(reservations);
         }
 
+        //search Reservation
         public ActionResult Getlist(string name)
         {
             if (name == null || name == "")
@@ -35,6 +36,7 @@ namespace BaxaHotel.Controllers
             return Json(reservations.Select(r => new {r.Id, sta= r.Start.ToUniversalTime(), customer =r.Customer.FullName, room=r.Room.Number, creat = r.Created.ToString("dd MMM yyyy"),closed = r.Closed!=null? r.Closed.Value.ToString("dd MMM yyyy"):null, end = r.End.ToString("dd MMM yyyy"), start = r.Start.ToString("dd MMM yyyy")}), JsonRequestBehavior.AllowGet);
         }
 
+        //activ-passiv Reservation
         public ActionResult Activate(int id)
         {
             Reservations reservation = context.Reservations.FirstOrDefault(r => r.Id == id && r.Closed == null);

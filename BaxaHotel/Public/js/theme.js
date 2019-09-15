@@ -279,7 +279,7 @@ $(window).on('load resize', function () {
             }
         })
 
-
+        //search customers
         $("#BtnSearchCustomer").click(function () {
             var name = $("#SearchCustomer input").val();
             $.ajax({
@@ -359,7 +359,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        //search users
         $("#BtnSearchUser").click(function () {
             var name = $("#SearchUser input").val();
             $.ajax({
@@ -517,7 +517,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        //search  rooms
         $("#BtnSearchRoom").click(function () {
             var name = $("#SearchRoom input").val();
             $.ajax({
@@ -601,7 +601,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        //search reservations
         $("#BtnSearchReservation").click(function () {
             var name = $("#SearchReservation input").val();
             $.ajax({
@@ -727,6 +727,7 @@ $(window).on('load resize', function () {
             })
         })
 
+        //delete customer, user, room
         $(document).on("click", ".mytable tbody .btn-danger", function () {
             var id = $(this).attr("value");
             var elem = $(this).parent().parent();
@@ -743,7 +744,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        //active-passive customer, user, room
         $(document).on("click", ".mytable tbody .activate", function () {
             var id = $(this).attr("value");
             var elem = $(this);
@@ -763,7 +764,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        //finis reseption
         $(document).on("click", ".mytable tbody .finis-reseption", function () {
             var id = $(this).attr("value");
             var elem = $(this);
@@ -781,7 +782,7 @@ $(window).on('load resize', function () {
                 })
             })
         })
-
+        
         $(document).on("change", ".booking input", function () {
             $("[booking] tbody").empty();
         })

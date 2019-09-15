@@ -11,7 +11,7 @@ namespace BaxaHotel.Controllers
     [Auth]
     public class RoomsController : BaseController
     {
-        // GET: Rooms
+        // list Rooms
         public ActionResult Index()
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -22,6 +22,7 @@ namespace BaxaHotel.Controllers
             return View(rooms);
         }
 
+        // search room
         public JsonResult GetList(string name)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -32,7 +33,10 @@ namespace BaxaHotel.Controllers
             return Json(rooms.Select(r => new { r.Id, r.Number, r.Price, r.PairPersonBedroom, r.SinglePersonBedroom, r.ChildBedroom, r.Status,r.IsDelete, Date = r.Created.ToString("dd MMM yyyy") }), JsonRequestBehavior.AllowGet);
         }
 
+        //view create room
         [HttpGet]
+
+        //view create room
         public ActionResult Create()
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -45,6 +49,8 @@ namespace BaxaHotel.Controllers
 
             return View();
         }
+
+        //update room
         [HttpPost]
         public ActionResult Create(Room room)
         {
@@ -73,6 +79,8 @@ namespace BaxaHotel.Controllers
 
             return RedirectToAction("index");
         }
+
+        //view update room
         [HttpGet]
         public ActionResult Update(int id)
         {
@@ -92,6 +100,7 @@ namespace BaxaHotel.Controllers
             return View(room);
         }
 
+        //update room
         [HttpPost]
         public ActionResult Update(Room room)
         {
@@ -124,6 +133,7 @@ namespace BaxaHotel.Controllers
             return RedirectToAction("index");
         }
 
+        //delete room
         public ActionResult Delete(int id)
         {
             string token = Request.Cookies["token"].Value.ToString();
@@ -150,6 +160,7 @@ namespace BaxaHotel.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        //active-passive room
         public ActionResult Activate(int id)
         {
             Room room = context.Rooms.FirstOrDefault(r=>r.Id==id&&r.IsDelete==false);;
