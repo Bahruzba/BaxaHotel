@@ -32,14 +32,16 @@ namespace BaxaHotel.Controllers
                 return View(login);
             }
             User user = context.Users.FirstOrDefault(u => u.UserName == login.UserName);
-            if (user == null || Crypto.VerifyHashedPassword(user.Password, login.Password))
+            if (user == null || !Crypto.VerifyHashedPassword(user.Password, login.Password))
             {
                 ModelState.AddModelError("Password", "Login ve ya parol yanlışdır.");
                 return View();
             }
-            Response.Cookies["Token"].Value = Guid.NewGuid().ToString();
+            user.Token = Guid.NewGuid().ToString();
+            context.SaveChanges();
+            Response.Cookies["Token"].Value = user.Token;
             Response.Cookies["Token"].Expires = DateTime.Now.AddDays(1);
-            return RedirectToAction("index", "customers");
+            return RedirectToAction("index", "reservations");
         }
 
         public ActionResult logout()

@@ -33,56 +33,59 @@
                     @{var a = 1;}
                     @foreach (var user in Model)
                     {
-                        if (user.Type == UserType.admin && user.Status == true)
+                        if (user.Status == true)
                         {
-                            <tr>
-                                <td class="text-center">@(a++)</td>
-                                <td class="text-center">@user.FullName</td>
-                                <td class="text-center">@user.UserName</td>
-                                <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
-                                <td class="text-center">@user.Type</td>
-                                <td class="stat text-center">Aktiv</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
+                    <tr @(user.Status != true ? "class=table-dark" : "")>
+                        <td class="text-center">@(a++)</td>
+                        <td class="text-center">@user.FullName</td>
+                        <td class="text-center">@user.UserName</td>
+                        <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
+                        <td class="text-center">@user.Type</td>
+                        <td class="stat text-center">Aktiv</td>
+                        @if (user.Type == UserType.admin)
+                        {
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                        }
+                        else
+                        {
+                            <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action("update","users", new {user.Id })">Düzəliş et</a></td>
+                            <td class="text-center"><a class="activate btn btn-warning text-white btn-sm" name="/users" value="@user.Id">Passivləşdir</a></td>
+                            <td class="text-center"><a class="btn btn-danger text-white btn-sm" name="/users" value="@user.Id">Sil</a></td>
+
+                        }
+                    </tr>
                         }
                     }
                     @foreach (var user in Model)
                     {
-                        if (user.Type != UserType.admin && user.Status == true)
+                        if (user.Status == false)
                         {
-                            <tr @(user.Status != true ? "class=table-dark" : "")>
-                                <td class="text-center">@(a++)</td>
-                                <td class="text-center">@user.FullName</td>
-                                <td class="text-center">@user.UserName</td>
-                                <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
-                                <td class="text-center">@user.Type</td>
-                                <td class="stat text-center">Aktiv</td>
-                                <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action(" update","users", new {user.Id })">Düzəliş et</a></td>
-                                <td class="text-center"><a class="activate btn btn-warning text-white btn-sm" name="/users" value="@user.Id">Passivləşdir</a></td>
-                                <td class="text-center"><a class="btn btn-danger text-white btn-sm" name="/users" value="@user.Id">Sil</a></td>
-                            </tr>
-                        }
-                    }
-                    @foreach (var user in Model)
+                <tr class="table-dark">
+                    <td class="text-center">@(a++)</td>
+                    <td class="text-center">@user.FullName</td>
+                    <td class="text-center">@user.UserName</td>
+                    <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
+                    <td class="text-center">@user.Type</td>
+                    <td class="stat text-center text-danger">Passiv</td>
+                    @if (user.Type == UserType.admin)
                     {
-                        if (user.Type == UserType.admin && user.Status == false)
-                        {
-                            <tr class="table-dark">
-                                <td class="text-center">@(a++)</td>
-                                <td class="text-center">@user.FullName</td>
-                                <td class="text-center">@user.UserName</td>
-                                <td class="text-center">@user.Created.ToString("dd MMM yyyy") il</td>
-                                <td class="text-center">@user.Type</td>
-                                <td class="stat text-center text-danger">Passiv</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    }
+                    else
+                    {
+                        <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action("update","users", new {user.Id })">Düzəliş et</a></td>
+                        <td class="text-center"><a class="activate btn btn-success text-white btn-sm" name="/users" value="@user.Id">Aktivləşdir</a></td>
+                        <td class="text-center"><a class="btn btn-danger text-white btn-sm" name="/users" value="@user.Id">Sil</a></td>
+
+                    }
+                </tr>
                         }
                     }
-                    @foreach (var user in Model)
+                    @*@foreach (var user in Model)
                     {
                         if (user.Type != UserType.admin && user.Status == true)
                         {
@@ -98,7 +101,7 @@
                             <td class="text-center"><a class="btn btn-danger text-white btn-sm" name="/users" value="@user.Id">Sil</a></td>
                         </tr>
                         }
-                    }
+                    }*@
                 </tbody>
             </table>
         </div>

@@ -9,6 +9,8 @@ namespace BaxaHotel.Models
     public class Reservations
     {
         public int Id { get; set; }
+        [Required(ErrorMessage ="Ümumi məbləği yazın.")]
+        public double TotalPrice { get; set; }
         [Required(ErrorMessage = "Rezervasiya başlama tarixini yazın.")]
         public DateTime Start { get; set; }
         [Required(ErrorMessage = "Rezervasiya bitəcəyi tarixi yazın.")]

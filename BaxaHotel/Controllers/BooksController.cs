@@ -58,6 +58,7 @@ namespace BaxaHotel.Controllers
 
         public ActionResult SelectCustomer(DateTime start, DateTime end, int id)
         {
+            ViewBag.PriceRoom =(end - start).TotalDays*context.Rooms.Find(id).Price;
             SearcCustomerToBook searcCustomerToBook = new SearcCustomerToBook
             {
                 Customers = context.Customers.ToList(),
@@ -70,8 +71,10 @@ namespace BaxaHotel.Controllers
 
         public ActionResult CompleteReservation(int id, int cid, DateTime start, DateTime end )
         {
+
             Reservations reservation = new Reservations
             {
+                TotalPrice= (end - start).TotalDays * context.Rooms.Find(id).Price,
                 Start = start,
                 End = end,
                 Created = DateTime.Now,
@@ -83,5 +86,19 @@ namespace BaxaHotel.Controllers
             context.SaveChanges();
             return RedirectToAction("index", "rooms");
         }
+
+        public ActionResult FinishReservation(int id)
+        {
+            Reservations reservation = context.Reservations.Find(id);
+            if (reservation == null||reservation.Closed != null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            reservation.Closed = DateTime.Now;
+            context.SaveChanges();
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -42,7 +42,7 @@
                                 <td class="text-center">@customer.Created.ToString("dd MMM yyyy") il</td>
                                 <td class="text-center">@(@customer.Reservations.Count == 0 ? "Yoxdur" : @customer.Reservations.Count.ToString() + "  rezervasiya")</td>
                                 <td class="stat text-center">Aktiv</td>
-                                <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action(" update","customers",new { id=customer.Id})">Düzəliş et</a></td>
+                                <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action("update","customers",new { id=customer.Id})">Düzəliş et</a></td>
                                 <td class="text-center"><a class="activate btn text-white btn-sm btn-warning" name="/customers" value="@customer.Id">@(customer.Status == true ? "Passivləşdir" : "Aktivləşdir")</a></td>
                                 <td class="text-center"><a class="btn btn-danger btn-sm text-white" name="/customers" value="@customer.Id">Sil</a></td>
                             </tr>
@@ -59,7 +59,7 @@
                                 <td class="text-center">@customer.Created.ToString("dd MMM yyyy") il</td>
                                 <td class="text-center">@(@customer.Reservations.Count == 0 ? "Yoxdur" : @customer.Reservations.Count.ToString() + "  rezervasiya")</td>
                                 <td class="stat text-center text-danger">Passiv</td>
-                                <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action(" update","customers",new { id=customer.Id})">Düzəliş et</a></td>
+                                <td class="text-center"><a class="btn btn-primary btn-sm" href="@Url.Action("update","customers",new { id=customer.Id})">Düzəliş et</a></td>
                                 <td class="text-center"><a class="activate btn text-white btn-sm btn-success" name="/customers" value="@customer.Id">@(customer.Status == true ? "Passivləşdir" : "Aktivləşdir")</a></td>
                                 <td class="text-center"><a class="btn btn-danger btn-sm text-white" name="/customers" value="@customer.Id">Sil</a></td>
                             </tr>

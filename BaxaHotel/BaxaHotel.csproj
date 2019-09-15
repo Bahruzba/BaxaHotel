@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\databasedoldurController.cs" />
@@ -238,6 +239,14 @@
     <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.cs" />
     <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.Designer.cs">
       <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909142133222_AddPriceToReservation.cs" />
+    <Compile Include="Migrations\201909142133222_AddPriceToReservation.Designer.cs">
+      <DependentUpon>201909142133222_AddPriceToReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909151322540_AddFileUploadToCustomer.cs" />
+    <Compile Include="Migrations\201909151322540_AddFileUploadToCustomer.Designer.cs">
+      <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoryProduct.cs" />
@@ -419,7 +428,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -528,6 +539,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.resx">
       <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909142133222_AddPriceToReservation.resx">
+      <DependentUpon>201909142133222_AddPriceToReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909151322540_AddFileUploadToCustomer.resx">
+      <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

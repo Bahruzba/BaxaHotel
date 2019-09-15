@@ -19,14 +19,14 @@ namespace BaxaHotel.Controllers
         }
         public ActionResult Index()
         {
-            List<User> users = context.Users.Where(u=>u.IsDelete==false).ToList();
+            List<User> users = context.Users.Where(u=>u.IsDelete==false).OrderBy(u=>u.Type).ToList();
             return View(users);
         }
 
         public JsonResult Getlist(string name)
         {
-            var users = context.Users.Include("Reservations").Where(u=>u.FullName.Contains(name)&& u.IsDelete == false).ToList();
-            return Json(users.Select(u => new { u.Id, u.FullName, u.UserName, Date = u.Created.ToString("dd MMM yyyy"), u.Type, u.Status, u.IsDelete, u.Reservations }), JsonRequestBehavior.AllowGet);
+            var users = context.Users.Where(u=>u.FullName.Contains(name)&& u.IsDelete == false).OrderBy(u=>u.Type).ToList();
+            return Json(users.Select(u => new { u.Id, u.FullName, u.UserName, Date = u.Created.ToString("dd MMM yyyy"), u.Type, u.Status, u.IsDelete}), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
