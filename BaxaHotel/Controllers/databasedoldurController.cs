@@ -9,7 +9,7 @@ using BaxaHotel.Models;
 
 namespace BaxaHotel.Controllers
 {
-    public class databasedoldurController : Controller
+    public class databasedoldurController : BaseController
     {
         // GET: databasedoldur        
         private BaxaHotelContext context;

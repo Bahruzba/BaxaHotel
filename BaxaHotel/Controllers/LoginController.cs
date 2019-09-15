@@ -10,14 +10,8 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
-        private BaxaHotelContext context;
-        public LoginController()
-        {
-            context = new BaxaHotelContext();
-        }
-        // GET: Login
         [HttpGet]
         public ActionResult Index()
         {

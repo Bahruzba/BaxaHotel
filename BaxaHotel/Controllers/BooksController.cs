@@ -9,17 +9,18 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class BooksController : Controller
+    public class BooksController : BaseController
     {
         // GET: Books
-        private BaxaHotelContext context;
-        public BooksController()
-        {
-            context = new BaxaHotelContext();
-        }
-
         public ActionResult Index(SearchRooms searchRooms = null)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             if (searchRooms.Start == null)
             {
                 searchRooms.Start = DateTime.Now;
@@ -58,6 +59,13 @@ namespace BaxaHotel.Controllers
 
         public ActionResult SelectCustomer(DateTime start, DateTime end, int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             ViewBag.PriceRoom =(end - start).TotalDays*context.Rooms.Find(id).Price;
             SearcCustomerToBook searcCustomerToBook = new SearcCustomerToBook
             {
@@ -71,6 +79,12 @@ namespace BaxaHotel.Controllers
 
         public ActionResult CompleteReservation(int id, int cid, DateTime start, DateTime end )
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
 
             Reservations reservation = new Reservations
             {
@@ -80,7 +94,7 @@ namespace BaxaHotel.Controllers
                 Created = DateTime.Now,
                 RoomId =id,
                 CustomerId=cid,
-                UserId=87
+                UserId= user.Id
             };
             context.Reservations.Add(reservation);
             context.SaveChanges();
@@ -89,6 +103,13 @@ namespace BaxaHotel.Controllers
 
         public ActionResult FinishReservation(int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type == UserType.restaurant)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             Reservations reservation = context.Reservations.Find(id);
             if (reservation == null||reservation.Closed != null)
             {

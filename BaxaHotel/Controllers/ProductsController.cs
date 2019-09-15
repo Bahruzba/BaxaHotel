@@ -7,14 +7,9 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
         // GET: Products
-        private BaxaHotelContext contex;
-        public ProductsController()
-        {
-            contex = new BaxaHotelContext();
-        }
         public ActionResult Index()
         {
 

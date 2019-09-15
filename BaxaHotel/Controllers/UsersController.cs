@@ -1,4 +1,5 @@
 ﻿using BaxaHotel.Data;
+using BaxaHotel.Helper;
 using BaxaHotel.Models;
 using System;
 using System.Collections.Generic;
@@ -9,22 +10,30 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class UsersController : Controller
+    [Auth]
+    public class UsersController : BaseController
     {
-        // GET: Users
-        private BaxaHotelContext context;
-        public UsersController()
-        {
-            context = new BaxaHotelContext();
-        }
         public ActionResult Index()
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u=>u.Token==token);
+            if (user.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
             List<User> users = context.Users.Where(u=>u.IsDelete==false).OrderBy(u=>u.Type).ToList();
             return View(users);
         }
 
-        public JsonResult Getlist(string name)
+        public ActionResult Getlist(string name)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type != UserType.admin)
+            {
+                return new HttpNotFoundResult();
+            }
+
             var users = context.Users.Where(u=>u.FullName.Contains(name)&& u.IsDelete == false).OrderBy(u=>u.Type).ToList();
             return Json(users.Select(u => new { u.Id, u.FullName, u.UserName, Date = u.Created.ToString("dd MMM yyyy"), u.Type, u.Status, u.IsDelete}), JsonRequestBehavior.AllowGet);
         }
@@ -32,12 +41,26 @@ namespace BaxaHotel.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User user = context.Users.FirstOrDefault(u => u.Token == token);
+            if (user.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(User user)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            if (usr.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             if (user != null)
             {
                 user.Created = DateTime.Now;
@@ -75,6 +98,13 @@ namespace BaxaHotel.Controllers
         [HttpPost]
         public ActionResult Update(User user)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            if (usr.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(user);
@@ -99,6 +129,13 @@ namespace BaxaHotel.Controllers
 
         public ActionResult Delete(int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            if (usr.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             User user = context.Users.Include("Reservations").FirstOrDefault(u=>u.Id==id);
             if (user == null)
             {
@@ -117,6 +154,13 @@ namespace BaxaHotel.Controllers
 
         public ActionResult Activate(int id)
         {
+            string token = Request.Cookies["token"].Value.ToString();
+            User usr = context.Users.FirstOrDefault(u => u.Token == token);
+            if (usr.Type != UserType.admin)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             User user = context.Users.FirstOrDefault(u=>u.Id==id&&u.IsDelete==false);
             if (user == null)
             {

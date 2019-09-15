@@ -9,25 +9,16 @@ using BaxaHotel.Helper;
 
 namespace BaxaHotel.Controllers
 {   [Auth]
-    public class CustomersController : Controller
+    public class CustomersController : BaseController
     {
-        private readonly BaxaHotelContext context;
-        public CustomersController()
-        {
-            context = new BaxaHotelContext();
-        }
         public ActionResult Index()
         {
-            string token = Request.Cookies["token"].ToString();
-            User user = context.Users.FirstOrDefault(u=>u.Token==token);
-            
             List<Customer> customers = context.Customers.Include("Reservations").Where(c=>c.IsDelete==false).OrderBy(c=>c.FullName).ToList();
             return View(customers);
         }
 
         public JsonResult GetList(string name)
         {
-
             var customers = context.Customers.Include("Reservations").Where(c => c.FullName.Contains(name)&&c.IsDelete==false).OrderBy(c=>c.FullName).ToList();
             return Json(customers.Select(c => new { c.Id, c.FullName, c.PhoneNumber, Date = c.Created.ToString("dd MMM yyyy"), c.IsDelete, c.Status, c.Reservations.Count }), JsonRequestBehavior.AllowGet);
         }

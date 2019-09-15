@@ -1,4 +1,5 @@
 ﻿using BaxaHotel.Data;
+using BaxaHotel.Helper;
 using BaxaHotel.Models;
 using System;
 using System.Collections.Generic;
@@ -7,14 +8,10 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class RoomsController : Controller
+    [Auth]
+    public class RoomsController : BaseController
     {
         // GET: Rooms
-        private BaxaHotelContext context;
-        public RoomsController()
-        {
-            context = new BaxaHotelContext();
-        }
         public ActionResult Index()
         {
             List<Room> rooms = context.Rooms.Include("Reservations").Where(r=>r.IsDelete==false).OrderBy(r=>r.Number).ToList();

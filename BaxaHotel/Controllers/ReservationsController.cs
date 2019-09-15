@@ -1,4 +1,5 @@
 ﻿using BaxaHotel.Data;
+using BaxaHotel.Helper;
 using BaxaHotel.Models;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,10 @@ using System.Web.Mvc;
 
 namespace BaxaHotel.Controllers
 {
-    public class ReservationsController : Controller
+    [Auth]
+    public class ReservationsController : BaseController
     {
         // GET: Reservation
-        private BaxaHotelContext context;
-        public ReservationsController()
-        {
-            context = new BaxaHotelContext();
-        }
         public ActionResult Index()
         {
             List<Reservations> reservations = context.Reservations.Include("Customer").Include("User").Include("Room").OrderBy(r=>r.End).ToList();
@@ -39,7 +36,6 @@ namespace BaxaHotel.Controllers
             Reservations reservation = context.Reservations.FirstOrDefault(r => r.Id == id && r.Closed == null);
             if (reservation == null)
             {
-                return Content("xdcfvgbh");
                 return new HttpNotFoundResult();
             }
             reservation.Closed = DateTime.Now;
