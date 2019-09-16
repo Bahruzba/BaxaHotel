@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Password)
-                                    @Html.TextBoxFor(m => m.Password, null, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => m.Password, null, new {@type="password", @class = "form-control" })
                                     @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" @Url.Action("Index", "Login")>LOGIN</button>

@@ -16,7 +16,7 @@ namespace BaxaHotel.Models
         [DisplayName("Otaq nömrəsi")]
         public int Number { get; set; }
         [Required(ErrorMessage ="Otağın qiymətini yazın.")]
-        [Range(10, 300, ErrorMessage = "Otağın bir gecəsi 1000 manatdan-dən yuxarı ola bilməz")]
+        [Range(10, 300, ErrorMessage = "Otağın bir gecəsi 10-300 manat olmalıdır.")]
         [DisplayName("Məbləğ")]
         public double Price { get; set; }
         [Required(ErrorMessage ="Otağın statusu qeyd olunmayıb.")]
@@ -34,6 +34,9 @@ namespace BaxaHotel.Models
         [DisplayName("Uşaq üçün yataq sayı")]
         public int? ChildBedroom { get; set; }
         public DateTime Created { get; set; }
+        public string Photo { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase File { get; set; }
         public List<Reservations> Reservations { get; set; }
     }
 }

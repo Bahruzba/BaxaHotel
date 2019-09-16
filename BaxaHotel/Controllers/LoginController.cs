@@ -37,7 +37,7 @@ namespace BaxaHotel.Controllers
             context.SaveChanges();
             Response.Cookies["Token"].Value = user.Token;
             Response.Cookies["Token"].Expires = DateTime.Now.AddDays(1);
-            return RedirectToAction("index", "customers");
+            return RedirectToAction("index", "reservations");
         }
 
         //logout

@@ -24,7 +24,7 @@ namespace BaxaHotel.Helper
 
             if (HttpContext.Current.Request.Cookies["token"] == null)
             {
-                    filterContext.Result = new RedirectResult("/login");
+                    filterContext.Result = new RedirectResult("/login/logout");
                     return;
             }
 
@@ -33,7 +33,7 @@ namespace BaxaHotel.Helper
 
             if (user == null)
             {
-                filterContext.Result = new RedirectResult("/login");
+                filterContext.Result = new RedirectResult("/login/logout");
                 return;
             }
 

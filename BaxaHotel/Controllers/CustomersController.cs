@@ -65,20 +65,6 @@ namespace BaxaHotel.Controllers
                 return View(customer);
             }
 
-            //if (customer.File.ContentType != "image/png" || customer.File.ContentType != "image/jpeg")
-            //{
-            //    ModelState.AddModelError("File", "Png və ya jpeg formatında şəkil seçin.");
-            //    return View(customer);
-            //}
-            //if (customer.File.ContentLength/1024/1024>2)
-            //{
-            //    ModelState.AddModelError("File", "Şəkilin həcmi 2 MB-dan böyük olmamalıdır");
-            //    return View(customer);
-            //}
-            //var text = customer.File.FileName.Split('.');
-            //customer.Photo = Guid.NewGuid().ToString()+text[text.Length-1];
-            //var path = Path.Combine(Server.MapPath("Uploads"), customer.Photo);
-            ////customer.File.SaveAs();
             customer.IsDelete = false;
             customer.Created = DateTime.Now;
             context.Customers.Add(customer);

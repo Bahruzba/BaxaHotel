@@ -129,7 +129,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\databasedoldurController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
@@ -250,6 +250,14 @@
     <Compile Include="Migrations\201909151957071_UpdateAuto.cs" />
     <Compile Include="Migrations\201909151957071_UpdateAuto.Designer.cs">
       <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909160635115_AddFileUploadRoom.cs" />
+    <Compile Include="Migrations\201909160635115_AddFileUploadRoom.Designer.cs">
+      <DependentUpon>201909160635115_AddFileUploadRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909160819445_UpdateFileUploadRoom.cs" />
+    <Compile Include="Migrations\201909160819445_UpdateFileUploadRoom.Designer.cs">
+      <DependentUpon>201909160819445_UpdateFileUploadRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoryProduct.cs" />
@@ -551,6 +559,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909151957071_UpdateAuto.resx">
       <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909160635115_AddFileUploadRoom.resx">
+      <DependentUpon>201909160635115_AddFileUploadRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909160819445_UpdateFileUploadRoom.resx">
+      <DependentUpon>201909160819445_UpdateFileUploadRoom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

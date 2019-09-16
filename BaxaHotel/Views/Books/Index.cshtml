@@ -12,6 +12,7 @@
                         <div class="d-flex form-group">
                             @Html.LabelFor(m => m.SearchRooms.Start, new { @class = "ml-3", @style = "width:140px" })
                             @Html.TextBoxFor(m => m.SearchRooms.Start, null, new { @class = "min", @type = "date", @min = DateTime.Now.ToString("yyyy-MM-dd"), @max = DateTime.Now.AddMonths(2).ToString("yyyy-MM-dd"), @style = "border-style:none; width:160px; border-bottom:solid; border-bottom-color:royalblue" })
+                            @Html.ValidationMessageFor(m => m.SearchRooms.Start, null, new { @class = "text-danger" })
                         </div>
                         <div class="mt-5 d-flex form-group">
                             @Html.LabelFor(m => m.SearchRooms.End, new { @class = "ml-3", @style = "width:140px" })
@@ -24,7 +25,7 @@
                             @Html.LabelFor(m => m.SearchRooms.MinPrice, new { @style = "width:140px" })
                             @Html.TextBoxFor(m => m.SearchRooms.MinPrice, null, new { @type = "number", @min = "10", @max = "300", @style = "width:50px; border-style:none; border-bottom:solid; border-bottom-color:royalblue" })
                             @Html.ValidationMessageFor(m => m.SearchRooms.MinPrice, null, new { @class = "text-danger" })
-                        </div>
+                                             </div>
                         <div class="mt-5 d-flex form-group">
                             @Html.LabelFor(m => m.SearchRooms.MaxPrice, new { @style = "width:140px" })
                             @Html.TextBoxFor(m => m.SearchRooms.MaxPrice, null, new { @type = "number", @min = "10", @max = "300", @style = "width:50px; border-style:none; border-bottom:solid; border-bottom-color:royalblue" })
@@ -52,7 +53,6 @@
                         <button type="submit" class="mt-4 w-75 btn btn-success">Axtar</button>
                     </div>
                 </form>
-                @Html.ValidationMessageFor(m => m.SearchRooms.Start, null, new { @class = "text-danger" })
 
             </div>
         </div>

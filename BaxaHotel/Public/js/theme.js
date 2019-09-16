@@ -279,7 +279,7 @@ $(window).on('load resize', function () {
             }
         })
 
-        //search customers
+        //search customer
         $("#BtnSearchCustomer").click(function () {
             var name = $("#SearchCustomer input").val();
             $.ajax({
@@ -359,7 +359,8 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        //search users
+
+        //search user
         $("#BtnSearchUser").click(function () {
             var name = $("#SearchUser input").val();
             $.ajax({
@@ -517,7 +518,8 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        //search  rooms
+
+        //search room
         $("#BtnSearchRoom").click(function () {
             var name = $("#SearchRoom input").val();
             $.ajax({
@@ -533,8 +535,14 @@ $(window).on('load resize', function () {
                         td1.text(i + 1);
                         $(".rooms tbody tr:last-child").append(td1);
                         var td2 = $("<td></td>");
-                        td2.text("№ " + response[i].Number);
+                        var img = $("<img/>");
+                        img.attr("width", "80px");
+                        img.attr("src", "/Uploads/" + response[i].Photo);
+                        td2.append(img);
                         $(".rooms tbody tr:last-child").append(td2);
+                        var td3 = $("<td></td>");
+                        td3.text("№ " + response[i].Number);
+                        $(".rooms tbody tr:last-child").append(td3);
                         var td3 = $("<td></td>");
                         td3.text(response[i].Price+".00 AZN");
                         $(".rooms tbody tr:last-child").append(td3);
@@ -601,7 +609,8 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        //search reservations
+
+        //search reservation
         $("#BtnSearchReservation").click(function () {
             var name = $("#SearchReservation input").val();
             $.ajax({
@@ -727,7 +736,7 @@ $(window).on('load resize', function () {
             })
         })
 
-        //delete customer, user, room
+        //delete room, customer, users
         $(document).on("click", ".mytable tbody .btn-danger", function () {
             var id = $(this).attr("value");
             var elem = $(this).parent().parent();
@@ -744,7 +753,8 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        //active-passive customer, user, room
+
+        //active-passive users, costomer, rooms
         $(document).on("click", ".mytable tbody .activate", function () {
             var id = $(this).attr("value");
             var elem = $(this);
@@ -764,7 +774,8 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        //finis reseption
+
+        //complete reservation
         $(document).on("click", ".mytable tbody .finis-reseption", function () {
             var id = $(this).attr("value");
             var elem = $(this);
@@ -782,9 +793,20 @@ $(window).on('load resize', function () {
                 })
             })
         })
-        
+
         $(document).on("change", ".booking input", function () {
             $("[booking] tbody").empty();
+        })
+
+        $(document).on("change", ".booking .min", function () {
+            var a = $(".booking .date .min").val();
+            $(".booking .date .max").removeAttr("min").attr("min", a);
+        })
+
+        $(document).on("change", ".booking .max", function () {
+            var a = $(".booking .date .max").val();
+            $(".booking .date .min").removeAttr("min").attr("max", a);
+
         })
 
 
@@ -795,7 +817,8 @@ $(window).on('load resize', function () {
         if (d.getDate() < 10) { b = "0" };
 
         if ($(".booking .date [min]").val() != undefined && $(".booking .date [min]").val().length != 10) {
-                $(".booking .date [min]").attr("value", d.getFullYear() + "-" + a + (d.getMonth() + 1) + "-" + b + d.getDate());
+            $(".booking .date [min]").attr("value", d.getFullYear() + "-" + a + (d.getMonth() + 1) + "-" + b + d.getDate());
+                $(".booking .date .min").attr("max", $(".booking .date [min]").val());
         }
 
         $(".selectCustomer tbody tr").click(function () {

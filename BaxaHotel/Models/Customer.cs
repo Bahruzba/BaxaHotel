@@ -28,7 +28,6 @@ namespace BaxaHotel.Models
         public DateTime Created { get; set; }
         public bool Status { get; set; }
         public bool? IsDelete { get; set; }
-        [MaxLength(100,ErrorMessage ="Şəklin uzunluğu 100 xakarterden uzun olmamalıdır.")]
         public List<Reservations> Reservations { get; set; }
     }
 }
