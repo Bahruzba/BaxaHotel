@@ -18,7 +18,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -139,125 +140,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Auth.cs" />
-    <Compile Include="Migrations\201909070721056_init.cs" />
-    <Compile Include="Migrations\201909070721056_init.Designer.cs">
-      <DependentUpon>201909070721056_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909070730109_AddRoomNumber.cs" />
-    <Compile Include="Migrations\201909070730109_AddRoomNumber.Designer.cs">
-      <DependentUpon>201909070730109_AddRoomNumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909070737530_UpdateCreateReservation.cs" />
-    <Compile Include="Migrations\201909070737530_UpdateCreateReservation.Designer.cs">
-      <DependentUpon>201909070737530_UpdateCreateReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909071437065_UpdateCreateReservation1.cs" />
-    <Compile Include="Migrations\201909071437065_UpdateCreateReservation1.Designer.cs">
-      <DependentUpon>201909071437065_UpdateCreateReservation1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909071604063_AddSVnumToCustomer.cs" />
-    <Compile Include="Migrations\201909071604063_AddSVnumToCustomer.Designer.cs">
-      <DependentUpon>201909071604063_AddSVnumToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909072000371_uppo.cs" />
-    <Compile Include="Migrations\201909072000371_uppo.Designer.cs">
-      <DependentUpon>201909072000371_uppo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909072003555_upp.cs" />
-    <Compile Include="Migrations\201909072003555_upp.Designer.cs">
-      <DependentUpon>201909072003555_upp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909072111353_NotNulable.cs" />
-    <Compile Include="Migrations\201909072111353_NotNulable.Designer.cs">
-      <DependentUpon>201909072111353_NotNulable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909080646498_CreateRoomTable.cs" />
-    <Compile Include="Migrations\201909080646498_CreateRoomTable.Designer.cs">
-      <DependentUpon>201909080646498_CreateRoomTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909080724398_fixbug.cs" />
-    <Compile Include="Migrations\201909080724398_fixbug.Designer.cs">
-      <DependentUpon>201909080724398_fixbug.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909091035305_AddClosedTimeReservation.cs" />
-    <Compile Include="Migrations\201909091035305_AddClosedTimeReservation.Designer.cs">
-      <DependentUpon>201909091035305_AddClosedTimeReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909110931082_AddStatusToTables.cs" />
-    <Compile Include="Migrations\201909110931082_AddStatusToTables.Designer.cs">
-      <DependentUpon>201909110931082_AddStatusToTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909111002237_AddCreateToRoom.cs" />
-    <Compile Include="Migrations\201909111002237_AddCreateToRoom.Designer.cs">
-      <DependentUpon>201909111002237_AddCreateToRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909112211071_deleteUmunTypeBedroom.cs" />
-    <Compile Include="Migrations\201909112211071_deleteUmunTypeBedroom.Designer.cs">
-      <DependentUpon>201909112211071_deleteUmunTypeBedroom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909112220205_deleteUmunTypeBedrooms.cs" />
-    <Compile Include="Migrations\201909112220205_deleteUmunTypeBedrooms.Designer.cs">
-      <DependentUpon>201909112220205_deleteUmunTypeBedrooms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120639528_AddNulableToBedroomCount.cs" />
-    <Compile Include="Migrations\201909120639528_AddNulableToBedroomCount.Designer.cs">
-      <DependentUpon>201909120639528_AddNulableToBedroomCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120644194_AddIsDeleteToRoom.cs" />
-    <Compile Include="Migrations\201909120644194_AddIsDeleteToRoom.Designer.cs">
-      <DependentUpon>201909120644194_AddIsDeleteToRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120655512_doNulableIsdelete.cs" />
-    <Compile Include="Migrations\201909120655512_doNulableIsdelete.Designer.cs">
-      <DependentUpon>201909120655512_doNulableIsdelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120658556_fixbuxx.cs" />
-    <Compile Include="Migrations\201909120658556_fixbuxx.Designer.cs">
-      <DependentUpon>201909120658556_fixbuxx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120803348_AddIsDeleteToTables.cs" />
-    <Compile Include="Migrations\201909120803348_AddIsDeleteToTables.Designer.cs">
-      <DependentUpon>201909120803348_AddIsDeleteToTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120840456_AddReseptionListToUsers.cs" />
-    <Compile Include="Migrations\201909120840456_AddReseptionListToUsers.Designer.cs">
-      <DependentUpon>201909120840456_AddReseptionListToUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909131448572_Duzelis.cs" />
-    <Compile Include="Migrations\201909131448572_Duzelis.Designer.cs">
-      <DependentUpon>201909131448572_Duzelis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.cs" />
-    <Compile Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.Designer.cs">
-      <DependentUpon>201909140828199_AddErrorMessageToCategoryProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909141439005_AddNulableToCreatedReseption.cs" />
-    <Compile Include="Migrations\201909141439005_AddNulableToCreatedReseption.Designer.cs">
-      <DependentUpon>201909141439005_AddNulableToCreatedReseption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.cs" />
-    <Compile Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.Designer.cs">
-      <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909142133222_AddPriceToReservation.cs" />
-    <Compile Include="Migrations\201909142133222_AddPriceToReservation.Designer.cs">
-      <DependentUpon>201909142133222_AddPriceToReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909151322540_AddFileUploadToCustomer.cs" />
-    <Compile Include="Migrations\201909151322540_AddFileUploadToCustomer.Designer.cs">
-      <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909151957071_UpdateAuto.cs" />
-    <Compile Include="Migrations\201909151957071_UpdateAuto.Designer.cs">
-      <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909160635115_AddFileUploadRoom.cs" />
-    <Compile Include="Migrations\201909160635115_AddFileUploadRoom.Designer.cs">
-      <DependentUpon>201909160635115_AddFileUploadRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909160819445_UpdateFileUploadRoom.cs" />
-    <Compile Include="Migrations\201909160819445_UpdateFileUploadRoom.Designer.cs">
-      <DependentUpon>201909160819445_UpdateFileUploadRoom.cs</DependentUpon>
+    <Compile Include="Migrations\202001161328060_init.cs" />
+    <Compile Include="Migrations\202001161328060_init.Designer.cs">
+      <DependentUpon>202001161328060_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoryProduct.cs" />
@@ -339,6 +224,7 @@
     <Content Include="Public\images\xs\avatar7.jpg" />
     <Content Include="Public\images\xs\avatar8.jpg" />
     <Content Include="Public\images\xs\avatar9.jpg" />
+    <Content Include="Public\js\datepicker.js" />
     <Content Include="Public\js\demo.js" />
     <Content Include="Public\js\pages\advanced-form.js" />
     <Content Include="Public\js\pages\calendar.js" />
@@ -476,95 +362,8 @@
     <Content Include="Views\Reservations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909070721056_init.resx">
-      <DependentUpon>201909070721056_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909070730109_AddRoomNumber.resx">
-      <DependentUpon>201909070730109_AddRoomNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909070737530_UpdateCreateReservation.resx">
-      <DependentUpon>201909070737530_UpdateCreateReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909071437065_UpdateCreateReservation1.resx">
-      <DependentUpon>201909071437065_UpdateCreateReservation1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909071604063_AddSVnumToCustomer.resx">
-      <DependentUpon>201909071604063_AddSVnumToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909072000371_uppo.resx">
-      <DependentUpon>201909072000371_uppo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909072003555_upp.resx">
-      <DependentUpon>201909072003555_upp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909072111353_NotNulable.resx">
-      <DependentUpon>201909072111353_NotNulable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909080646498_CreateRoomTable.resx">
-      <DependentUpon>201909080646498_CreateRoomTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909080724398_fixbug.resx">
-      <DependentUpon>201909080724398_fixbug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909091035305_AddClosedTimeReservation.resx">
-      <DependentUpon>201909091035305_AddClosedTimeReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909110931082_AddStatusToTables.resx">
-      <DependentUpon>201909110931082_AddStatusToTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909111002237_AddCreateToRoom.resx">
-      <DependentUpon>201909111002237_AddCreateToRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909112211071_deleteUmunTypeBedroom.resx">
-      <DependentUpon>201909112211071_deleteUmunTypeBedroom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909112220205_deleteUmunTypeBedrooms.resx">
-      <DependentUpon>201909112220205_deleteUmunTypeBedrooms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120639528_AddNulableToBedroomCount.resx">
-      <DependentUpon>201909120639528_AddNulableToBedroomCount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120644194_AddIsDeleteToRoom.resx">
-      <DependentUpon>201909120644194_AddIsDeleteToRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120655512_doNulableIsdelete.resx">
-      <DependentUpon>201909120655512_doNulableIsdelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120658556_fixbuxx.resx">
-      <DependentUpon>201909120658556_fixbuxx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120803348_AddIsDeleteToTables.resx">
-      <DependentUpon>201909120803348_AddIsDeleteToTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120840456_AddReseptionListToUsers.resx">
-      <DependentUpon>201909120840456_AddReseptionListToUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909131448572_Duzelis.resx">
-      <DependentUpon>201909131448572_Duzelis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909140828199_AddErrorMessageToCategoryProduct.resx">
-      <DependentUpon>201909140828199_AddErrorMessageToCategoryProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909141439005_AddNulableToCreatedReseption.resx">
-      <DependentUpon>201909141439005_AddNulableToCreatedReseption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909141604184_RemoveNulableFromCreatedReservation.resx">
-      <DependentUpon>201909141604184_RemoveNulableFromCreatedReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909142133222_AddPriceToReservation.resx">
-      <DependentUpon>201909142133222_AddPriceToReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909151322540_AddFileUploadToCustomer.resx">
-      <DependentUpon>201909151322540_AddFileUploadToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909151957071_UpdateAuto.resx">
-      <DependentUpon>201909151957071_UpdateAuto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909160635115_AddFileUploadRoom.resx">
-      <DependentUpon>201909160635115_AddFileUploadRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909160819445_UpdateFileUploadRoom.resx">
-      <DependentUpon>201909160819445_UpdateFileUploadRoom.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001161328060_init.resx">
+      <DependentUpon>202001161328060_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -585,7 +384,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63847</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44381/</IISUrl>
+          <IISUrl>http://localhost:44381/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -644,7 +644,7 @@ $(window).on('load resize', function () {
                             $(".reservations tbody tr:last-child").append(td6);
                             var a1 = $("<a></a>");
                             a1.text("Olacaq");
-                            a1.addClass("btn btn-success text-white btn-sm");
+                            a1.addClass("py-2 px-3 bg-primary text-white");
                             $(".reservations tbody tr:last-child td:last-child").append(a1);
                             var td7 = $("<td></td>");
                             $(".reservations tbody tr:last-child").append(td7);
@@ -680,10 +680,10 @@ $(window).on('load resize', function () {
                             $(".reservations tbody tr:last-child").append(td5);
                             var td6 = $("<td></td>");
                             $(".reservations tbody tr:last-child").append(td6);
-                            var a1 = $("<a></a>");
-                            a1.text("Aktiv");
-                            a1.addClass("btn btn-success text-white btn-sm");
-                            $(".reservations tbody tr:last-child td:last-child").append(a1);
+                            var span = $("<span></span>");
+                            span.text("Aktiv");
+                            span.addClass("py-2 px-3 bg-success text-white");
+                            $(".reservations tbody tr:last-child td:last-child").append(span);
                             var td7 = $("<td></td>");
                             $(".reservations tbody tr:last-child").append(td7);
                             var a2 = $("<a></a>");
@@ -695,6 +695,7 @@ $(window).on('load resize', function () {
                             $(".reservations tbody tr:last-child td:last-child").append(a2);
                         }
                     }
+
 
                     for (var i = 0; i < response.length; i++) {
                         var a = Number(response[i].sta.substr(6, 13));
@@ -718,10 +719,10 @@ $(window).on('load resize', function () {
                             $(".reservations tbody tr:last-child").append(td5);
                             var td6 = $("<td></td>");
                             $(".reservations tbody tr:last-child").append(td6);
-                            var a1 = $("<a></a>");
-                            a1.text("Passiv");
-                            a1.addClass("btn btn-warning text-white btn-sm");
-                            $(".reservations tbody tr:last-child td:last-child").append(a1);
+                            var span = $("<span></span>");
+                            span.text("Passiv");
+                            span.addClass("py-2 px-3 bg-warning text-white");
+                            $(".reservations tbody tr:last-child td:last-child").append(span);
                             var td7 = $("<td></td>");
                             $(".reservations tbody tr:last-child").append(td7);
                         }
@@ -780,14 +781,13 @@ $(window).on('load resize', function () {
             var id = $(this).attr("value");
             var elem = $(this);
             var name = $(this).attr("name");
-            console.log(id,name);
             $.ajax({
                 url: name + "/activate/" + id,
                 type: "get",
                 dataType: "json",
                 success: (function (response) {
                     elem.fadeOut();
-                    elem.parent().prev().children("a").text("Passiv").removeClass("btn-succes").addClass("btn-warning");
+                    elem.parent().prev().children("span").text("Passiv").removeClass("bg-succes").addClass("bg-warning");
                 }), error: (function (error) {
                     console.log(error);
                 })

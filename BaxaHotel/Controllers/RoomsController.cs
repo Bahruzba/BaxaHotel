@@ -35,9 +35,8 @@ namespace BaxaHotel.Controllers
         }
 
         //view create room
-        [HttpGet]
-
         //view create room
+        [HttpGet]
         public ActionResult Create()
         {
             string token = Request.Cookies["token"].Value.ToString();

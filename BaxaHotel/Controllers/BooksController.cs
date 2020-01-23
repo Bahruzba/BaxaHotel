@@ -110,7 +110,7 @@ namespace BaxaHotel.Controllers
             };
             context.Reservations.Add(reservation);
             context.SaveChanges();
-            return RedirectToAction("index", "rooms");
+            return RedirectToAction("index", "reservations");
         }
 
         //finis reservations

@@ -7,13 +7,13 @@ namespace BaxaHotel.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddCreateToRoom : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCreateToRoom));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909111002237_AddCreateToRoom"; }
+            get { return "202001161328060_init"; }
         }
         
         string IMigrationMetadata.Source

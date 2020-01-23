@@ -39,7 +39,7 @@
                         <td class="text-center">№ @reservation.Room.Number</td>
                         <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
                         <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
-                        <td class="text-center "><a class="btn-sm text-white btn btn-success">Olacaq</a></td>
+                        <td class="text-center "><span class="py-2 px-3 bg-success text-white">Olacaq</span></td>
                         <td class="text-center"><a name="/reservations" value="@reservation.Id" style="background-color:red" class="btn text-white finis-reseption btn-sm">Bitir</a></td>
                     </tr>
                         }
@@ -54,7 +54,7 @@
                                 <td class="text-center">№ @reservation.Room.Number</td>
                                 <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
                                 <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
-                                <td class="text-center "><a class="btn-sm text-white btn btn-success">Aktiv</a></td>
+                                <td class="text-center "><span class="py-2 px-3 bg-success text-white">Aktiv</span></td>
                                 <td class="text-center"><a name="/reservations" value="@reservation.Id" style="background-color:red" class="finis-reseption btn btn-sm text-white">Bitir</a></td>
                             </tr>
                         }
@@ -63,15 +63,15 @@
                     {
                         if (reservation.Closed!=null)
                         {
-                            <tr class="text-center">
-                                <td class="text-center">@(a++)</td>
-                                <td class="text-center">@reservation.Customer.FullName</td>
-                                <td class="text-center">№ @reservation.Room.Number</td>
-                                <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
-                                <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
-                                <td class="text-center mt-2 btn-sm btn text-white btn-warning">Passiv</td>
-                                <td></td>
-                            </tr>
+                <tr class="text-center">
+                    <td class="text-center">@(a++)</td>
+                    <td class="text-center">@reservation.Customer.FullName</td>
+                    <td class="text-center">№ @reservation.Room.Number</td>
+                    <td class="text-center">@reservation.Start.ToString("dd MMM yyyy")-cu il</td>
+                    <td class="text-center">@reservation.End.ToString("dd MMM yyyy")-cu il </td>
+                    <td class="text-center"><span class="py-2 px-3 bg-warning text-white">Passiv</span></td>
+                    <td></td>
+                </tr>
                         }
                     }
                 </tbody>

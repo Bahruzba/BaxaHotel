@@ -26,14 +26,15 @@ namespace BaxaHotel.Controllers
             context.Users.Add(usr);
             context.SaveChanges();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
                 User user = new User
                 {
                     FullName = "Ad soyad",
                     UserName = "ad.soyad@mail.ru",
                     Password = Crypto.HashPassword("Bahruza100bal"),
-                    Created = DateTime.Now
+                    Created = DateTime.Now,
+                    IsDelete= false
                 };
                 if (i%3 == 2)
                 {
@@ -65,7 +66,7 @@ namespace BaxaHotel.Controllers
                 {
                     FullName = "Ad Soyad"+(i+1),
                     PhoneNumber="55696557" +i,
-                    SVnum="1234567" +i,
+                    SVnum="123456" +i.ToString("00"),
                     Created= DateTime.Now,
                     Status= true,
                     IsDelete=false,

@@ -22,7 +22,7 @@ namespace BaxaHotel.Helper
         {
             base.OnActionExecuting(filterContext);
 
-            if (HttpContext.Current.Request.Cookies["token"] == null)
+            if (HttpContext.Current.Request.Cookies["Token"] == null)
             {
                     filterContext.Result = new RedirectResult("/login/logout");
                     return;

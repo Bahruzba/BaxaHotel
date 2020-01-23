@@ -166,38 +166,171 @@ C:\Users\CODE\Desktop\New folder\BaxaHotel\bin\Newtonsoft.Json.xml
 C:\Users\CODE\Desktop\New folder\BaxaHotel\bin\Antlr3.Runtime.pdb
 C:\Users\CODE\Desktop\New folder\BaxaHotel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.csprojAssemblyReference.cache
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.init.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddRoomNumber.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.UpdateCreateReservation.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.UpdateCreateReservation1.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddSVnumToCustomer.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.uppo.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.upp.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.NotNulable.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.CreateRoomTable.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.fixbug.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddClosedTimeReservation.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.csproj.GenerateResource.cache
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.csproj.CoreCompileInputs.cache
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.csproj.CopyComplete
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.dll
 C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.pdb
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddStatusToTables.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddCreateToRoom.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.deleteUmunTypeBedroom.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.deleteUmunTypeBedrooms.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddNulableToBedroomCount.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddIsDeleteToRoom.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.doNulableIsdelete.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.fixbuxx.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddIsDeleteToTables.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddReseptionListToUsers.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.Duzelis.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddErrorMessageToCategoryProduct.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddNulableToCreatedReseption.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.RemoveNulableFromCreatedReservation.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddPriceToReservation.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddFileUploadToCustomer.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.UpdateAuto.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.AddFileUploadRoom.resources
-C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.UpdateFileUploadRoom.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.Migrations.init.resources
+C:\Users\CODE\Desktop\New folder\BaxaHotel\obj\Debug\BaxaHotel.csproj.GenerateResource.cache
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.dll.config
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.pdb
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.exe
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.exe.config
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.rsp
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.exe
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.exe.config
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.rsp
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.AppContext.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Console.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Compression.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Pipes.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Claims.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.ValueTuple.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XPath.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.exe
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.exe.config
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.rsp
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\VBCSCompiler.exe
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Antlr3.Runtime.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Newtonsoft.Json.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Helpers.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Mvc.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Optimization.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Razor.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\WebGrease.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Helpers.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Mvc.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Optimization.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Razor.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Newtonsoft.Json.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Antlr3.Runtime.pdb
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csprojAssemblyReference.cache
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.Migrations.init.resources
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csproj.GenerateResource.cache
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csproj.CopyComplete
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.dll
+C:\Users\CODE\Desktop\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.pdb
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.dll.config
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\BaxaHotel.pdb
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.exe
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.exe.config
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csc.rsp
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.exe
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.exe.config
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\csi.rsp
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.AppContext.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Console.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Compression.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.IO.Pipes.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Claims.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.ValueTuple.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XPath.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.exe
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.exe.config
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\vbc.rsp
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\VBCSCompiler.exe
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Antlr3.Runtime.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Newtonsoft.Json.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Helpers.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Mvc.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Optimization.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Razor.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\WebGrease.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Helpers.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Mvc.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Optimization.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.Razor.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Newtonsoft.Json.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Antlr3.Runtime.pdb
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csprojAssemblyReference.cache
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csproj.CopyComplete
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.dll
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.pdb
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.Migrations.init.resources
+C:\Users\bahruz.ahmadov\Desktop\Baxruz\Tapşırıqlar\BaxaHotel\BaxaHotel\obj\Debug\BaxaHotel.csproj.GenerateResource.cache
